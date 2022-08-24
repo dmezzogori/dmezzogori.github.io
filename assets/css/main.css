@@ -1852,7 +1852,7 @@ input, select, textarea {
 			background-color: rgba(46, 43, 55, 0.875);
 			opacity: 0;
 			outline: 0;
-			visibility: none;
+			visibility: hidden;
 			z-index: 0;
 		}
 

@@ -1,0 +1,42 @@
+[
+  {
+    "name": "GitHub",
+    "url": "https://github.com/dmezzogori",
+    "icon": "github"
+  },
+  {
+    "name": "LinkedIn",
+    "url": "https://www.linkedin.com/in/davidemezzogori/",
+    "icon": "linkedin"
+  },
+  {
+    "name": "Twitter",
+    "url": "https://twitter.com/dmezzogori",
+    "icon": "twitter"
+  },
+  {
+    "name": "Google Scholar",
+    "url": "https://scholar.google.com/citations?user=ckHXc8wAAAAJ&hl=it",
+    "icon": "google-scholar"
+  },
+  {
+    "name": "ORCID",
+    "url": "https://orcid.org/0000-0002-3303-0789",
+    "icon": "orcid"
+  },
+  {
+    "name": "Scopus",
+    "url": "https://www.scopus.com/authid/detail.uri?authorId=57205318368",
+    "icon": "scopus"
+  },
+  {
+    "name": "ResearchGate",
+    "url": "https://www.researchgate.net/profile/Davide_Mezzogori",
+    "icon": "researchgate"
+  },
+  {
+    "name": "UniMORE",
+    "url": "https://personale.unimore.it/Rubrica/dettaglio/dmezzogori",
+    "icon": "university"
+  }
+]

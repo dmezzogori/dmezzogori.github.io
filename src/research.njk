@@ -1,0 +1,182 @@
+---
+layout: layouts/base.njk
+title: Research
+description: My research focuses on AI/ML applications for operations, logistics optimization, and manufacturing systems.
+---
+
+<div class="py-12 md:py-16">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    {# Header #}
+    <header class="mb-12">
+      <h1 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-4">Research</h1>
+      <p class="text-lg text-slate-600 dark:text-slate-400 max-w-3xl">
+        My research focuses on the application of Artificial Intelligence and Machine Learning to operations management,
+        logistics optimization, and manufacturing systems.
+      </p>
+    </header>
+
+    {# Research Interests #}
+    <section class="mb-16">
+      <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-6">Research Interests</h2>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        {% set interests = [
+          "AI/ML for Operations Management",
+          "Logistics and Supply Chain Optimization",
+          "Discrete Event Simulation",
+          "Metaheuristics for Scheduling and Picking",
+          "Reinforcement Learning for Production Planning",
+          "Automated Storage and Retrieval Systems (AS/RS)",
+          "Digital Twins for Manufacturing",
+          "RFID Applications in Retail",
+          "Lean Manufacturing and Process Improvement"
+        ] %}
+        {% for interest in interests %}
+          <div class="flex items-center gap-3 p-4 bg-white dark:bg-slate-800 rounded-lg border border-slate-200 dark:border-slate-700">
+            <svg class="w-5 h-5 text-primary-600 dark:text-primary-400 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+            <span class="text-slate-700 dark:text-slate-300">{{ interest }}</span>
+          </div>
+        {% endfor %}
+      </div>
+    </section>
+
+    {# Current Projects #}
+    <section class="mb-16">
+      <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-6">Current Research Projects</h2>
+      <div class="space-y-6">
+        <div class="p-6 bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700">
+          <div class="flex items-start gap-4">
+            <div class="w-12 h-12 rounded-lg bg-accent-100 dark:bg-accent-900/30 flex items-center justify-center flex-shrink-0">
+              <svg class="w-6 h-6 text-accent-600 dark:text-accent-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064"/>
+              </svg>
+            </div>
+            <div>
+              <h3 class="text-lg font-semibold text-slate-900 dark:text-white mb-1">ECOSISTER (PNRR)</h3>
+              <p class="text-sm text-primary-600 dark:text-primary-400 mb-2">Spoke 3: Green manufacturing for a sustainable economy</p>
+              <p class="text-slate-600 dark:text-slate-400">
+                Developing data-driven and lean-based solutions for sustainable production planning and control systems.
+                Focus on Engineering-to-Order (ETO) and high-automation manufacturing contexts.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="p-6 bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700">
+          <div class="flex items-start gap-4">
+            <div class="w-12 h-12 rounded-lg bg-primary-100 dark:bg-primary-900/30 flex items-center justify-center flex-shrink-0">
+              <svg class="w-6 h-6 text-primary-600 dark:text-primary-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+              </svg>
+            </div>
+            <div>
+              <h3 class="text-lg font-semibold text-slate-900 dark:text-white mb-1">RL-AutoLog</h3>
+              <p class="text-sm text-primary-600 dark:text-primary-400 mb-2">FAR Dipartimentale DIEF 2023 (Winner)</p>
+              <p class="text-slate-600 dark:text-slate-400">
+                Reinforcement Learning for Highly Automated Intra-Logistics Processes: A Simulation-based Approach.
+                Combining discrete event simulation with RL algorithms for logistics optimization.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="p-6 bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700">
+          <div class="flex items-start gap-4">
+            <div class="w-12 h-12 rounded-lg bg-primary-100 dark:bg-primary-900/30 flex items-center justify-center flex-shrink-0">
+              <svg class="w-6 h-6 text-primary-600 dark:text-primary-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"/>
+              </svg>
+            </div>
+            <div>
+              <h3 class="text-lg font-semibold text-slate-900 dark:text-white mb-1">Deep RL for Production Planning</h3>
+              <p class="text-sm text-primary-600 dark:text-primary-400 mb-2">International Collaboration - University of Innsbruck</p>
+              <p class="text-slate-600 dark:text-slate-400">
+                Collaboration with Prof. Stefan Haeussler on Deep Reinforcement Learning applications
+                for Production Planning and Control in complex manufacturing environments.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    {# Collaborations #}
+    <section class="mb-16">
+      <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-6">Research Collaborations</h2>
+      <div class="grid sm:grid-cols-2 gap-6">
+        <div class="p-5 bg-white dark:bg-slate-800 rounded-lg border border-slate-200 dark:border-slate-700">
+          <h3 class="font-semibold text-slate-900 dark:text-white mb-2">UniMORE</h3>
+          <p class="text-sm text-slate-600 dark:text-slate-400">
+            Prof. Massimo Bertolini, Prof. Davide Castellano, Prof. Francesco Leali, Prof. Cristina Renzi
+          </p>
+        </div>
+        <div class="p-5 bg-white dark:bg-slate-800 rounded-lg border border-slate-200 dark:border-slate-700">
+          <h3 class="font-semibold text-slate-900 dark:text-white mb-2">University of Parma</h3>
+          <p class="text-sm text-slate-600 dark:text-slate-400">
+            Prof. Antonio Rizzi, Prof. Giovanni Romagnoli, Prof. Francesco Zammori
+          </p>
+        </div>
+        <div class="p-5 bg-white dark:bg-slate-800 rounded-lg border border-slate-200 dark:border-slate-700">
+          <h3 class="font-semibold text-slate-900 dark:text-white mb-2">University of Pisa</h3>
+          <p class="text-sm text-slate-600 dark:text-slate-400">
+            Dott. Francesco Di Paco
+          </p>
+        </div>
+        <div class="p-5 bg-white dark:bg-slate-800 rounded-lg border border-slate-200 dark:border-slate-700">
+          <h3 class="font-semibold text-slate-900 dark:text-white mb-2">University of Innsbruck (Austria)</h3>
+          <p class="text-sm text-slate-600 dark:text-slate-400">
+            Prof. Stefan Haeussler
+          </p>
+        </div>
+      </div>
+    </section>
+
+    {# Selected Publications #}
+    <section class="mb-16">
+      <div class="flex items-center justify-between mb-6">
+        <h2 class="text-2xl font-bold text-slate-900 dark:text-white">Selected Publications</h2>
+        <div class="flex gap-3">
+          <a href="https://scholar.google.com/citations?user=ckHXc8wAAAAJ" target="_blank" rel="noopener noreferrer"
+             class="inline-flex items-center gap-2 text-sm text-primary-600 dark:text-primary-400 hover:text-primary-800 dark:hover:text-primary-300 no-underline">
+            <i class="ai ai-google-scholar text-lg"></i>
+            Google Scholar
+          </a>
+        </div>
+      </div>
+      <div class="space-y-4">
+        {% for pub in publications %}
+          {% set pub = pub %}
+          {% include "components/publication-card.njk" %}
+        {% endfor %}
+      </div>
+    </section>
+
+    {# Academic Profiles #}
+    <section>
+      <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-6">Academic Profiles</h2>
+      <div class="flex flex-wrap gap-4">
+        <a href="https://scholar.google.com/citations?user=ckHXc8wAAAAJ" target="_blank" rel="noopener noreferrer"
+           class="inline-flex items-center gap-2 px-4 py-2 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg hover:border-primary-500 dark:hover:border-primary-500 transition-colors no-underline">
+          <i class="ai ai-google-scholar text-xl text-primary-600 dark:text-primary-400"></i>
+          <span class="text-slate-700 dark:text-slate-300">Google Scholar</span>
+        </a>
+        <a href="https://orcid.org/0000-0002-3303-0789" target="_blank" rel="noopener noreferrer"
+           class="inline-flex items-center gap-2 px-4 py-2 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg hover:border-primary-500 dark:hover:border-primary-500 transition-colors no-underline">
+          <i class="ai ai-orcid text-xl text-primary-600 dark:text-primary-400"></i>
+          <span class="text-slate-700 dark:text-slate-300">ORCID</span>
+        </a>
+        <a href="https://www.scopus.com/authid/detail.uri?authorId=57205318368" target="_blank" rel="noopener noreferrer"
+           class="inline-flex items-center gap-2 px-4 py-2 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg hover:border-primary-500 dark:hover:border-primary-500 transition-colors no-underline">
+          <i class="ai ai-scopus text-xl text-primary-600 dark:text-primary-400"></i>
+          <span class="text-slate-700 dark:text-slate-300">Scopus</span>
+        </a>
+        <a href="https://www.researchgate.net/profile/Davide_Mezzogori" target="_blank" rel="noopener noreferrer"
+           class="inline-flex items-center gap-2 px-4 py-2 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg hover:border-primary-500 dark:hover:border-primary-500 transition-colors no-underline">
+          <i class="ai ai-researchgate text-xl text-primary-600 dark:text-primary-400"></i>
+          <span class="text-slate-700 dark:text-slate-300">ResearchGate</span>
+        </a>
+      </div>
+    </section>
+  </div>
+</div>

@@ -1,0 +1,63 @@
+<header class="sticky top-0 z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800">
+  <nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16">
+      <!-- Logo / Name -->
+      <a href="/" class="flex items-center space-x-2 text-slate-900 dark:text-white font-semibold text-lg hover:text-primary-600 dark:hover:text-primary-400 no-underline">
+        <span>Davide Mezzogori</span>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <div class="hidden md:flex items-center space-x-1">
+        {% for item in navigation %}
+          <a href="{{ item.url }}"
+             class="px-3 py-2 text-sm font-medium rounded-lg no-underline
+                    {% if page.url == item.url %}
+                      text-primary-600 dark:text-primary-400 bg-primary-50 dark:bg-primary-900/30
+                    {% else %}
+                      text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800
+                    {% endif %}">
+            {{ item.text }}
+          </a>
+        {% endfor %}
+
+        <!-- Theme Toggle -->
+        {% include "components/theme-toggle.njk" %}
+      </div>
+
+      <!-- Mobile menu button -->
+      <div class="flex md:hidden items-center space-x-2">
+        {% include "components/theme-toggle.njk" %}
+        <button type="button" id="mobile-menu-button"
+                class="p-2 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800"
+                aria-expanded="false" aria-controls="mobile-menu">
+          <span class="sr-only">Open menu</span>
+          <!-- Hamburger icon -->
+          <svg class="h-6 w-6" id="menu-icon-open" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+          <!-- Close icon (hidden by default) -->
+          <svg class="h-6 w-6 hidden" id="menu-icon-close" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation -->
+    <div class="hidden md:hidden pb-4" id="mobile-menu">
+      <div class="flex flex-col space-y-1">
+        {% for item in navigation %}
+          <a href="{{ item.url }}"
+             class="px-3 py-2 text-base font-medium rounded-lg no-underline
+                    {% if page.url == item.url %}
+                      text-primary-600 dark:text-primary-400 bg-primary-50 dark:bg-primary-900/30
+                    {% else %}
+                      text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800
+                    {% endif %}">
+            {{ item.text }}
+          </a>
+        {% endfor %}
+      </div>
+    </div>
+  </nav>
+</header>

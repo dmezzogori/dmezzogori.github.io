@@ -1,0 +1,23 @@
+---
+layout: layouts/base.njk
+---
+<div class="py-12 md:py-16">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    {% if title %}
+      <header class="mb-12">
+        <h1 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-4">
+          {{ title }}
+        </h1>
+        {% if description %}
+          <p class="text-lg text-slate-600 dark:text-slate-400">
+            {{ description }}
+          </p>
+        {% endif %}
+      </header>
+    {% endif %}
+
+    <div class="prose prose-slate dark:prose-invert prose-lg max-w-none">
+      {{ content | safe }}
+    </div>
+  </div>
+</div>

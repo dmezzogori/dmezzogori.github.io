@@ -1,0 +1,67 @@
+{
+  "opensource": [
+    {
+      "title": "Kwik",
+      "subtitle": "REST API Framework",
+      "description": "A modern, batteries-included, business-oriented REST API framework built on Python 3.12+. Provides pre-configured tooling including pagination, filtering, and sorting with a unified interface.",
+      "icon": "code",
+      "technologies": ["Python", "FastAPI", "SQLAlchemy", "Pydantic"],
+      "github": "https://github.com/dmezzogori/kwik",
+      "docs": "https://davide.mezzogori.com/kwik/"
+    },
+    {
+      "title": "Simulatte",
+      "subtitle": "Discrete Event Simulation",
+      "description": "A Python framework for discrete event simulation of logistics and manufacturing systems. Designed for warehouse simulation, production line analysis, and intra-logistics process modeling.",
+      "icon": "cpu",
+      "technologies": ["Python", "SimPy", "Simulation"],
+      "github": "https://github.com/dmezzogori/simulatte"
+    }
+  ],
+  "industrial": [
+    {
+      "title": "RFID Real-Time Inventory",
+      "subtitle": "Fashion Retail",
+      "description": "ML-powered in-store inventory management using RFID. Developed a novel Software-Based Shielding technique to distinguish items on the store floor from those in the back office, without physical barriers. Patent application filed.",
+      "icon": "factory",
+      "technologies": ["Machine Learning", "RFID", "Retail Tech"],
+      "doi": "10.3233/RFT-210294"
+    },
+    {
+      "title": "Entity Embeddings Demand Forecasting",
+      "subtitle": "Haute Couture Fashion",
+      "description": "Deep Neural Network for intermittent demand forecasting in the fashion industry. Uses entity embeddings to handle products with no historical time series by learning commercial similarities between current and past products.",
+      "icon": "chart",
+      "technologies": ["Deep Learning", "PyTorch", "Demand Forecasting"],
+      "doi": "10.1016/j.promfg.2020.01.260"
+    },
+    {
+      "title": "AI Image Tracking System",
+      "subtitle": "Artisanal Food Industry",
+      "description": "Real-time object detection and tracking system for ham curing processes. Uses transfer learning to recognize and track individual hams through curing, enabling quality prediction and competitive advantage.",
+      "icon": "cpu",
+      "technologies": ["Computer Vision", "Transfer Learning", "Object Detection"]
+    },
+    {
+      "title": "Goods-to-Pickers Optimization",
+      "subtitle": "E80 S.p.A.",
+      "description": "20-month industrial research project developing advanced optimization methodologies for order case picking in goods-to-pickers systems. Applied metaheuristics to real-world logistics automation challenges.",
+      "icon": "factory",
+      "technologies": ["Optimization", "Metaheuristics", "Logistics"]
+    },
+    {
+      "title": "Automated Assembly Line Simulation",
+      "subtitle": "SPAL Automotive",
+      "description": "Digital twin development for electric motor assembly lines using discrete event simulation. Focused on performance optimization, downtime reduction, and internal logistics improvement.",
+      "icon": "cpu",
+      "technologies": ["Digital Twin", "Simulation", "Automotive"]
+    },
+    {
+      "title": "TEBAN Software Solution",
+      "subtitle": "Kheperer S.r.l.",
+      "description": "12-month project as lead and coordinator developing AI-based solutions for logistics process optimization. Includes internal messaging system for LLM-based data collection and analysis.",
+      "icon": "chart",
+      "technologies": ["AI", "LLM", "Logistics", "Software Development"]
+    }
+  ]
+}

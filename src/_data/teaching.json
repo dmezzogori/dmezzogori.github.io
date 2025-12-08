@@ -1,0 +1,55 @@
+{
+  "courses": [
+    {
+      "title": "Applications of AI/ML in Operations and Supply Chain Management",
+      "degree": "MSc in Artificial Intelligence Engineering",
+      "university": "UniMORE",
+      "role": "Course Owner (100%)",
+      "credits": "48 hours",
+      "description": "Comprehensive overview of AI and ML applications in operations and supply chain. Covers discrete event simulation with Python and SimPy, reinforcement learning algorithms for job shop scheduling and intra-logistics optimization. Final project involves agent modeling for highly automated logistics environments."
+    },
+    {
+      "title": "Project Management",
+      "degree": "MSc in Mechanical Engineering",
+      "university": "UniMORE",
+      "role": "Lecturer (12 CFU)",
+      "credits": "12 CFU of 48 total",
+      "owner": "Prof. Massimo Bertolini",
+      "description": "Methodological competencies for industrial project planning, scheduling, and management. Covers cost, time, and quality control techniques, risk management, stakeholder management, KPI analysis and variance analysis."
+    },
+    {
+      "title": "Basic Principles of Data Analytics and Optimization for Logistics and Operations Management Processes",
+      "degree": "PhD Course",
+      "university": "Doctoral School \"Enzo Ferrari\" in Mechanical and Vehicle Engineering",
+      "role": "Course Owner (100%)",
+      "credits": "3 CFU",
+      "description": "Introduction to data analytics approaches and development/validation of optimization methods for logistics and operations management processes."
+    }
+  ],
+  "supervision": [
+    {
+      "name": "Nicola Mercogliano",
+      "type": "PhD Tutor",
+      "cycle": "Cycle XL",
+      "school": "Doctoral School \"Enzo Ferrari\" - UniMORE"
+    }
+  ],
+  "service": [
+    {
+      "role": "Peer Reviewer",
+      "venues": [
+        "International Journal of Logistics Research and Applications",
+        "Expert Systems with Applications",
+        "Computers & Industrial Engineering"
+      ]
+    },
+    {
+      "role": "Technical Associate Editor",
+      "venue": "INCOM 2024 (18th IFAC Symposium on Information Control Problems in Manufacturing)"
+    },
+    {
+      "role": "Project Referee",
+      "venue": "Bi-Rex Industry 4.0 Competence Center (2025)"
+    }
+  ]
+}

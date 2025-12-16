@@ -73,6 +73,7 @@
 @theme {
   /* Legacy mappings for Tailwind classes */
   --color-primary-200: var(--palette-light);
+  --color-primary-300: var(--palette-light);
   --color-primary-400: var(--palette-accent);
   --color-primary-600: var(--palette-accent);
   --color-primary-700: var(--palette-dark);

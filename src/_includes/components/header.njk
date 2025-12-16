@@ -1,20 +1,20 @@
-<header class="sticky top-0 z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800">
+<header class="sticky top-0 z-50 bg-white dark:bg-stone-900 border-b-4 border-black dark:border-white">
   <nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex items-center justify-between h-16">
       <!-- Logo / Name -->
-      <a href="/" class="flex items-center space-x-2 text-slate-900 dark:text-white font-semibold text-lg hover:text-primary-600 dark:hover:text-primary-400 no-underline">
-        <span>Davide Mezzogori</span>
+      <a href="/" class="flex items-center space-x-2 text-black dark:text-white font-bold text-lg no-underline hover:text-primary-600 dark:hover:text-primary-400">
+        <span class="font-display uppercase tracking-tight">Davide Mezzogori</span>
       </a>
 
       <!-- Desktop Navigation -->
-      <div class="hidden md:flex items-center space-x-1">
+      <div class="hidden md:flex items-center space-x-2">
         {% for item in navigation %}
           <a href="{{ item.url }}"
-             class="px-3 py-2 text-sm font-medium rounded-lg no-underline
+             class="px-3 py-1.5 text-sm font-bold no-underline
                     {% if page.url == item.url %}
-                      text-primary-600 dark:text-primary-400 bg-primary-50 dark:bg-primary-900/30
+                      neo-nav-active
                     {% else %}
-                      text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800
+                      text-black dark:text-white border-2 border-transparent hover:border-black dark:hover:border-white hover:bg-primary-100 dark:hover:bg-primary-900
                     {% endif %}">
             {{ item.text }}
           </a>
@@ -28,7 +28,7 @@
       <div class="flex md:hidden items-center space-x-2">
         {% include "components/theme-toggle.njk" %}
         <button type="button" id="mobile-menu-button"
-                class="p-2 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800"
+                class="p-2 border-2 border-black dark:border-white text-black dark:text-white hover:bg-primary-200 dark:hover:bg-primary-800"
                 aria-expanded="false" aria-controls="mobile-menu">
           <span class="sr-only">Open menu</span>
           <!-- Hamburger icon -->
@@ -45,14 +45,14 @@
 
     <!-- Mobile Navigation -->
     <div class="hidden md:hidden pb-4" id="mobile-menu">
-      <div class="flex flex-col space-y-1">
+      <div class="flex flex-col space-y-2 border-t-2 border-black dark:border-white pt-4">
         {% for item in navigation %}
           <a href="{{ item.url }}"
-             class="px-3 py-2 text-base font-medium rounded-lg no-underline
+             class="px-3 py-2 text-base font-bold no-underline
                     {% if page.url == item.url %}
-                      text-primary-600 dark:text-primary-400 bg-primary-50 dark:bg-primary-900/30
+                      neo-nav-active
                     {% else %}
-                      text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800
+                      text-black dark:text-white border-2 border-transparent hover:border-black dark:hover:border-white hover:bg-primary-100 dark:hover:bg-primary-900
                     {% endif %}">
             {{ item.text }}
           </a>

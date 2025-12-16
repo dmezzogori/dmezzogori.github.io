@@ -1,31 +1,53 @@
 /* Inter font from Google Fonts */
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap");
+
+/* Space Mono for headings - gives a more brutalist feel */
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap");
 
 /* JetBrains Mono for code */
 @import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap");
 
 @import "tailwindcss";
 
+/* ==========================================================================
+   NEOBRUTALIST DESIGN SYSTEM
+   Warm Purple/Violet Accent | Hard Shadows | Bold Borders | Playful Energy
+   ========================================================================== */
+
 /* Custom CSS variables for theming */
 @theme {
-  --color-primary-50: #f0f9ff;
-  --color-primary-100: #e0f2fe;
-  --color-primary-200: #bae6fd;
-  --color-primary-300: #7dd3fc;
-  --color-primary-400: #38bdf8;
-  --color-primary-500: #0ea5e9;
-  --color-primary-600: #0284c7;
-  --color-primary-700: #0369a1;
-  --color-primary-800: #075985;
-  --color-primary-900: #0c4a6e;
-  --color-primary-950: #082f49;
+  /* Warm Purple/Violet palette */
+  --color-primary-50: #faf5ff;
+  --color-primary-100: #f3e8ff;
+  --color-primary-200: #e9d5ff;
+  --color-primary-300: #d8b4fe;
+  --color-primary-400: #c084fc;
+  --color-primary-500: #a855f7;
+  --color-primary-600: #9333ea;
+  --color-primary-700: #7e22ce;
+  --color-primary-800: #6b21a8;
+  --color-primary-900: #581c87;
+  --color-primary-950: #3b0764;
 
-  --color-accent-400: #34d399;
-  --color-accent-500: #10b981;
-  --color-accent-600: #059669;
+  /* Warm accent - coral/peach for contrast */
+  --color-accent-400: #fb923c;
+  --color-accent-500: #f97316;
+  --color-accent-600: #ea580c;
 
+  /* Background colors - warm off-whites */
+  --color-bg-light: #fffbeb;
+  --color-bg-cream: #fef3c7;
+  --color-bg-dark: #1c1917;
+
+  /* Neobrutalist shadow */
+  --shadow-neo: 4px 4px 0 0 #000;
+  --shadow-neo-lg: 6px 6px 0 0 #000;
+  --shadow-neo-hover: 2px 2px 0 0 #000;
+
+  /* Fonts */
   --font-sans: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
     Roboto, sans-serif;
+  --font-display: "Space Mono", "JetBrains Mono", monospace;
   --font-mono: "JetBrains Mono", Menlo, Monaco, Consolas, monospace;
 }
 
@@ -37,16 +59,162 @@ html {
 body {
   font-family: var(--font-sans);
   @apply antialiased;
+  background-color: var(--color-bg-light);
+}
+
+/* Dark mode body */
+.dark body {
+  background-color: var(--color-bg-dark);
 }
 
 /* Focus styles for accessibility */
 *:focus-visible {
-  @apply outline-2 outline-offset-2 outline-primary-500;
+  @apply outline-2 outline-offset-2 outline-black;
 }
 
-/* Smooth transitions for theme toggle */
+.dark *:focus-visible {
+  @apply outline-white;
+}
+
+/* Remove smooth transitions - neobrutalism prefers snappy interactions */
 * {
-  @apply transition-colors duration-200;
+  @apply transition-none;
+}
+
+/* But allow transform transitions for hover effects */
+.neo-hover {
+  transition: transform 0.1s ease-out, box-shadow 0.1s ease-out;
+}
+
+/* ==========================================================================
+   NEOBRUTALIST UTILITY CLASSES
+   ========================================================================== */
+
+/* Hard shadow cards */
+.neo-card {
+  @apply border-2 border-black bg-white;
+  box-shadow: var(--shadow-neo);
+}
+
+.neo-card:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: var(--shadow-neo-lg);
+}
+
+.dark .neo-card {
+  @apply border-white bg-stone-900;
+  box-shadow: 4px 4px 0 0 #fff;
+}
+
+.dark .neo-card:hover {
+  box-shadow: 6px 6px 0 0 #fff;
+}
+
+/* Accent card variant */
+.neo-card-accent {
+  @apply border-2 border-black;
+  background-color: var(--color-primary-200);
+  box-shadow: var(--shadow-neo);
+}
+
+.dark .neo-card-accent {
+  @apply border-white;
+  background-color: var(--color-primary-800);
+  box-shadow: 4px 4px 0 0 #fff;
+}
+
+/* Neobrutalist buttons */
+.neo-btn {
+  @apply px-4 py-2 font-bold border-2 border-black bg-white;
+  box-shadow: var(--shadow-neo);
+  transition: transform 0.1s ease-out, box-shadow 0.1s ease-out;
+}
+
+.neo-btn:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: var(--shadow-neo-lg);
+}
+
+.neo-btn:active {
+  transform: translate(2px, 2px);
+  box-shadow: none;
+}
+
+.neo-btn-primary {
+  @apply px-4 py-2 font-bold border-2 border-black text-white;
+  background-color: var(--color-primary-600);
+  box-shadow: var(--shadow-neo);
+  transition: transform 0.1s ease-out, box-shadow 0.1s ease-out;
+}
+
+.neo-btn-primary:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: var(--shadow-neo-lg);
+}
+
+.neo-btn-primary:active {
+  transform: translate(2px, 2px);
+  box-shadow: none;
+}
+
+.dark .neo-btn,
+.dark .neo-btn-primary {
+  @apply border-white;
+  box-shadow: 4px 4px 0 0 #fff;
+}
+
+.dark .neo-btn:hover,
+.dark .neo-btn-primary:hover {
+  box-shadow: 6px 6px 0 0 #fff;
+}
+
+/* Tags/badges */
+.neo-tag {
+  @apply px-2 py-1 text-xs font-bold border-2 border-black bg-white;
+  box-shadow: 2px 2px 0 0 #000;
+}
+
+.neo-tag-accent {
+  @apply px-2 py-1 text-xs font-bold border-2 border-black;
+  background-color: var(--color-primary-200);
+  box-shadow: 2px 2px 0 0 #000;
+}
+
+.dark .neo-tag {
+  @apply border-white bg-stone-800 text-white;
+  box-shadow: 2px 2px 0 0 #fff;
+}
+
+.dark .neo-tag-accent {
+  @apply border-white text-white;
+  background-color: var(--color-primary-700);
+  box-shadow: 2px 2px 0 0 #fff;
+}
+
+/* Borders */
+.neo-border {
+  @apply border-2 border-black;
+}
+
+.dark .neo-border {
+  @apply border-white;
+}
+
+.neo-border-thick {
+  @apply border-4 border-black;
+}
+
+.dark .neo-border-thick {
+  @apply border-white;
+}
+
+/* Section dividers */
+.neo-divider {
+  @apply border-t-4 border-black;
+}
+
+.dark .neo-divider {
+  @apply border-white;
 }
 
 /* Custom link styles */
@@ -54,12 +222,116 @@ a {
   @apply underline-offset-2;
 }
 
-/* Code blocks */
+/* Code blocks with neobrutalist style */
 code {
   font-family: var(--font-mono);
   @apply text-sm;
 }
 
+pre {
+  @apply border-2 border-black bg-white;
+  box-shadow: var(--shadow-neo);
+}
+
 pre code {
-  @apply block overflow-x-auto p-4 rounded-lg;
+  @apply block overflow-x-auto p-4;
+}
+
+.dark pre {
+  @apply border-white bg-stone-900;
+  box-shadow: 4px 4px 0 0 #fff;
+}
+
+/* Headings with display font */
+h1, h2, h3 {
+  font-family: var(--font-display);
+}
+
+/* Prose adjustments for neobrutalist feel */
+.prose a {
+  @apply text-primary-600 font-semibold;
+  text-decoration-thickness: 2px;
+}
+
+.dark .prose a {
+  @apply text-primary-400;
+}
+
+.prose strong {
+  @apply font-bold;
+}
+
+/* Avatar with neobrutalist border */
+.neo-avatar {
+  @apply border-4 border-black;
+  box-shadow: var(--shadow-neo);
+}
+
+.dark .neo-avatar {
+  @apply border-white;
+  box-shadow: 4px 4px 0 0 #fff;
+}
+
+/* Stats/numbers with accent background */
+.neo-stat {
+  @apply font-bold;
+  font-family: var(--font-display);
+  color: var(--color-primary-600);
+}
+
+.dark .neo-stat {
+  color: var(--color-primary-400);
+}
+
+/* Icon boxes */
+.neo-icon-box {
+  @apply w-12 h-12 flex items-center justify-center border-2 border-black;
+  background-color: var(--color-primary-200);
+  box-shadow: 2px 2px 0 0 #000;
+}
+
+.dark .neo-icon-box {
+  @apply border-white;
+  background-color: var(--color-primary-800);
+  box-shadow: 2px 2px 0 0 #fff;
+}
+
+/* Input fields */
+.neo-input {
+  @apply w-full px-4 py-2 border-2 border-black bg-white;
+  box-shadow: var(--shadow-neo);
+}
+
+.neo-input:focus {
+  @apply outline-none;
+  box-shadow: var(--shadow-neo-lg);
+}
+
+.dark .neo-input {
+  @apply border-white bg-stone-900 text-white;
+  box-shadow: 4px 4px 0 0 #fff;
+}
+
+/* Marquee/highlight sections */
+.neo-highlight {
+  @apply py-4 border-y-4 border-black;
+  background-color: var(--color-primary-200);
+}
+
+.dark .neo-highlight {
+  @apply border-white;
+  background-color: var(--color-primary-900);
+}
+
+/* Navigation active state */
+.neo-nav-active {
+  @apply border-2 border-black font-bold;
+  background-color: var(--color-primary-200);
+  box-shadow: 2px 2px 0 0 #000;
+}
+
+.dark .neo-nav-active {
+  @apply border-white;
+  background-color: var(--color-primary-800);
+  box-shadow: 2px 2px 0 0 #fff;
 }

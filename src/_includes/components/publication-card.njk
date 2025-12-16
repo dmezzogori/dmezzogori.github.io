@@ -1,29 +1,29 @@
-{# Publication card component #}
+{# Publication card component - Neobrutalist style #}
 {# Usage: {% set pub = publication %}{% include "components/publication-card.njk" %} #}
-<article class="p-6 bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700 hover:shadow-md transition-shadow">
+<article class="neo-card neo-hover p-6">
   <div class="flex flex-col gap-3">
     <!-- Title -->
-    <h3 class="text-lg font-semibold text-slate-900 dark:text-white leading-snug">
+    <h3 class="text-lg font-bold text-black dark:text-white leading-snug">
       {{ pub.title }}
     </h3>
 
     <!-- Authors -->
-    <p class="text-sm text-slate-600 dark:text-slate-400">
+    <p class="text-sm text-stone-700 dark:text-stone-300">
       {{ pub.authors }}
     </p>
 
     <!-- Journal / Venue -->
     <p class="text-sm">
-      <span class="font-medium text-primary-600 dark:text-primary-400">{{ pub.journal }}</span>
+      <span class="font-bold text-primary-600 dark:text-primary-400">{{ pub.journal }}</span>
       {% if pub.volume %}, {{ pub.volume }}{% endif %}
       {% if pub.pages %}, {{ pub.pages }}{% endif %}
-      <span class="text-slate-500 dark:text-slate-500">({{ pub.year }})</span>
+      <span class="text-stone-600 dark:text-stone-400 font-semibold">({{ pub.year }})</span>
     </p>
 
     <!-- DOI Link -->
     {% if pub.doi %}
       <a href="https://doi.org/{{ pub.doi }}" target="_blank" rel="noopener noreferrer"
-         class="inline-flex items-center gap-2 text-sm text-primary-600 dark:text-primary-400 hover:text-primary-800 dark:hover:text-primary-300">
+         class="inline-flex items-center gap-2 text-sm font-bold text-primary-600 dark:text-primary-400 hover:text-primary-800 dark:hover:text-primary-300 no-underline hover:underline">
         <i class="ai ai-doi text-lg"></i>
         <span>{{ pub.doi }}</span>
         <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">

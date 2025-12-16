@@ -7,25 +7,25 @@ description: "Research Scientist at UniMORE. Bridging academia and industry thro
 {# Hero Section #}
 {% include "components/hero.njk" %}
 
-{# Stats Bar #}
-<section class="py-8 bg-slate-50 dark:bg-slate-800/50">
+{# Stats Bar - Neobrutalist highlight section #}
+<section class="neo-highlight">
   <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-      <div>
-        <div class="text-3xl font-bold text-primary-600 dark:text-primary-400">35+</div>
-        <div class="text-sm text-slate-600 dark:text-slate-400">Publications</div>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-0 text-center">
+      <div class="p-4 border-r-2 border-black dark:border-white">
+        <div class="text-3xl neo-stat">35+</div>
+        <div class="text-sm text-black dark:text-white font-semibold uppercase tracking-wide">Publications</div>
       </div>
-      <div>
-        <div class="text-3xl font-bold text-primary-600 dark:text-primary-400">ASN</div>
-        <div class="text-sm text-slate-600 dark:text-slate-400">Associate Professor Qualified</div>
+      <div class="p-4 border-r-2 border-black dark:border-white md:border-r-2">
+        <div class="text-3xl neo-stat">ASN</div>
+        <div class="text-sm text-black dark:text-white font-semibold uppercase tracking-wide">Assoc. Prof. Qualified</div>
       </div>
-      <div>
-        <div class="text-3xl font-bold text-primary-600 dark:text-primary-400">PhD</div>
-        <div class="text-sm text-slate-600 dark:text-slate-400">Supervisor</div>
+      <div class="p-4 border-r-2 border-black dark:border-white">
+        <div class="text-3xl neo-stat">PhD</div>
+        <div class="text-sm text-black dark:text-white font-semibold uppercase tracking-wide">Supervisor</div>
       </div>
-      <div>
-        <div class="text-3xl font-bold text-primary-600 dark:text-primary-400">Co-Founder</div>
-        <div class="text-sm text-slate-600 dark:text-slate-400">Kheperer Startup</div>
+      <div class="p-4">
+        <div class="text-3xl neo-stat">Co-Founder</div>
+        <div class="text-sm text-black dark:text-white font-semibold uppercase tracking-wide">Kheperer Startup</div>
       </div>
     </div>
   </div>
@@ -34,9 +34,9 @@ description: "Research Scientist at UniMORE. Bridging academia and industry thro
 {# About Section #}
 <section class="py-16 md:py-20">
   <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-    <h2 class="text-2xl md:text-3xl font-bold text-slate-900 dark:text-white mb-8">About Me</h2>
+    <h2 class="text-2xl md:text-3xl font-bold text-black dark:text-white mb-8 uppercase tracking-tight border-b-4 border-black dark:border-white pb-2 inline-block">About Me</h2>
 
-    <div class="prose prose-slate dark:prose-invert prose-lg max-w-none">
+    <div class="prose prose-stone dark:prose-invert prose-lg max-w-none">
       <p>
         I am a <strong>Research Scientist</strong> at <a href="https://www.unimore.it">UniMORE</a> (University of Modena and Reggio Emilia),
         Department of Engineering "Enzo Ferrari", focusing on the application of <strong>Artificial Intelligence</strong>
@@ -68,54 +68,54 @@ description: "Research Scientist at UniMORE. Bridging academia and industry thro
   </div>
 </section>
 
-{# Highlights Section #}
-<section class="py-16 md:py-20 bg-slate-50 dark:bg-slate-800/50">
+{# Highlights Section - What I Do #}
+<section class="py-16 md:py-20 border-y-4 border-black dark:border-white">
   <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-    <h2 class="text-2xl md:text-3xl font-bold text-slate-900 dark:text-white mb-8 text-center">What I Do</h2>
+    <h2 class="text-2xl md:text-3xl font-bold text-black dark:text-white mb-8 text-center uppercase tracking-tight">What I Do</h2>
 
     <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
       {# Research Card #}
-      <a href="/research/" class="group p-6 bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700 hover:shadow-md transition-all no-underline">
-        <div class="w-12 h-12 rounded-lg bg-primary-100 dark:bg-primary-900/30 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-          <svg class="w-6 h-6 text-primary-600 dark:text-primary-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <a href="/research/" class="group neo-card neo-hover p-6 no-underline">
+        <div class="neo-icon-box mb-4 group-hover:translate-x-[-2px] group-hover:translate-y-[-2px]">
+          <svg class="w-6 h-6 text-primary-700 dark:text-primary-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
           </svg>
         </div>
-        <h3 class="text-lg font-semibold text-slate-900 dark:text-white mb-2">Research</h3>
-        <p class="text-sm text-slate-600 dark:text-slate-400">AI/ML for Operations, Logistics Optimization, Simulation, Reinforcement Learning</p>
+        <h3 class="text-lg font-bold text-black dark:text-white mb-2 font-display">Research</h3>
+        <p class="text-sm text-stone-700 dark:text-stone-300">AI/ML for Operations, Logistics Optimization, Simulation, Reinforcement Learning</p>
       </a>
 
       {# Projects Card #}
-      <a href="/projects/" class="group p-6 bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700 hover:shadow-md transition-all no-underline">
-        <div class="w-12 h-12 rounded-lg bg-primary-100 dark:bg-primary-900/30 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-          <svg class="w-6 h-6 text-primary-600 dark:text-primary-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <a href="/projects/" class="group neo-card neo-hover p-6 no-underline">
+        <div class="neo-icon-box mb-4 group-hover:translate-x-[-2px] group-hover:translate-y-[-2px]">
+          <svg class="w-6 h-6 text-primary-700 dark:text-primary-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/>
           </svg>
         </div>
-        <h3 class="text-lg font-semibold text-slate-900 dark:text-white mb-2">Open Source</h3>
-        <p class="text-sm text-slate-600 dark:text-slate-400">Kwik REST Framework, Simulatte Simulation Library</p>
+        <h3 class="text-lg font-bold text-black dark:text-white mb-2 font-display">Open Source</h3>
+        <p class="text-sm text-stone-700 dark:text-stone-300">Kwik REST Framework, Simulatte Simulation Library</p>
       </a>
 
       {# Industry Card #}
-      <a href="/projects/#industrial" class="group p-6 bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700 hover:shadow-md transition-all no-underline">
-        <div class="w-12 h-12 rounded-lg bg-primary-100 dark:bg-primary-900/30 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-          <svg class="w-6 h-6 text-primary-600 dark:text-primary-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <a href="/projects/#industrial" class="group neo-card neo-hover p-6 no-underline">
+        <div class="neo-icon-box mb-4 group-hover:translate-x-[-2px] group-hover:translate-y-[-2px]">
+          <svg class="w-6 h-6 text-primary-700 dark:text-primary-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
           </svg>
         </div>
-        <h3 class="text-lg font-semibold text-slate-900 dark:text-white mb-2">Industry</h3>
-        <p class="text-sm text-slate-600 dark:text-slate-400">Technology Transfer, Industrial AI, Kheperer Startup</p>
+        <h3 class="text-lg font-bold text-black dark:text-white mb-2 font-display">Industry</h3>
+        <p class="text-sm text-stone-700 dark:text-stone-300">Technology Transfer, Industrial AI, Kheperer Startup</p>
       </a>
 
       {# Teaching Card #}
-      <a href="/teaching/" class="group p-6 bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700 hover:shadow-md transition-all no-underline">
-        <div class="w-12 h-12 rounded-lg bg-primary-100 dark:bg-primary-900/30 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-          <svg class="w-6 h-6 text-primary-600 dark:text-primary-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <a href="/teaching/" class="group neo-card neo-hover p-6 no-underline">
+        <div class="neo-icon-box mb-4 group-hover:translate-x-[-2px] group-hover:translate-y-[-2px]">
+          <svg class="w-6 h-6 text-primary-700 dark:text-primary-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
           </svg>
         </div>
-        <h3 class="text-lg font-semibold text-slate-900 dark:text-white mb-2">Teaching</h3>
-        <p class="text-sm text-slate-600 dark:text-slate-400">AI/ML in Operations, Project Management, PhD Supervision</p>
+        <h3 class="text-lg font-bold text-black dark:text-white mb-2 font-display">Teaching</h3>
+        <p class="text-sm text-stone-700 dark:text-stone-300">AI/ML in Operations, Project Management, PhD Supervision</p>
       </a>
     </div>
   </div>

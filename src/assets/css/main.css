@@ -1,11 +1,5 @@
-/* Inter font from Google Fonts */
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap");
-
-/* Space Mono for headings - gives a more brutalist feel */
-@import url("https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap");
-
-/* JetBrains Mono for code */
-@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap");
+/* JetBrains Mono - Primary font for entire site */
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&display=swap");
 
 @import "tailwindcss";
 
@@ -47,11 +41,11 @@
   --shadow-neo-lg: 6px 6px 0 0 #000;
   --shadow-neo-hover: 2px 2px 0 0 #000;
 
-  /* Fonts */
-  --font-sans: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-    Roboto, sans-serif;
-  --font-display: "JetBrains Mono", monospace;
-  --font-mono: "JetBrains Mono", Menlo, Monaco, Consolas, monospace;
+  /* Fonts - Single source of truth */
+  --font-primary: "JetBrains Mono", monospace;
+  --font-sans: var(--font-primary);
+  --font-display: var(--font-primary);
+  --font-mono: var(--font-primary);
 }
 
 /* Base styles */

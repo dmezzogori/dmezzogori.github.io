@@ -20,25 +20,25 @@ eleventyExcludeFromCollections: true
       <div class="space-y-8">
         {% for post in collections.posts %}
           <article class="group">
-            <a href="{{ post.url }}" class="block p-6 bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 hover:border-primary-500 dark:hover:border-primary-500 transition-all no-underline">
-              <div class="flex items-center gap-2 text-sm text-slate-500 dark:text-slate-400 mb-3">
+            <a href="{{ post.url }}" class="neo-card neo-hover block p-6 no-underline">
+              <div class="flex items-center gap-2 text-sm text-stone-600 dark:text-stone-400 mb-3">
                 <time datetime="{{ post.date | isoDate }}">{{ post.date | readableDate }}</time>
                 {% if post.data.tags %}
                   <span>&middot;</span>
-                  <div class="flex gap-2">
+                  <div class="flex flex-wrap gap-2">
                     {% for tag in post.data.tags %}
                       {% if tag != "posts" %}
-                        <span class="text-primary-600 dark:text-primary-400">#{{ tag }}</span>
+                        <span class="neo-tag-accent">{{ tag }}</span>
                       {% endif %}
                     {% endfor %}
                   </div>
                 {% endif %}
               </div>
-              <h2 class="text-xl font-semibold text-slate-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors mb-2">
+              <h2 class="text-xl font-bold text-black dark:text-white font-display mb-2">
                 {{ post.data.title }}
               </h2>
               {% if post.data.description %}
-                <p class="text-slate-600 dark:text-slate-400">
+                <p class="text-stone-700 dark:text-stone-300">
                   {{ post.data.description }}
                 </p>
               {% endif %}

@@ -44,6 +44,13 @@
   --palette-accent: #FFC300;
 }
 
+/* Concrete Jungle */
+[data-palette="concrete"] {
+  --palette-dark: #212121;
+  --palette-light: #F5F5F5;
+  --palette-accent: #FF5722;
+}
+
 /* --- Semantic Tokens (Light Mode) --- */
 :root {
   --color-bg: var(--palette-light);

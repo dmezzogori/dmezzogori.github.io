@@ -11,35 +11,73 @@
    Warm Purple/Violet Accent | Hard Shadows | Bold Borders | Playful Energy
    ========================================================================== */
 
-/* Custom CSS variables for theming */
+/* ==========================================================================
+   COLOR PALETTE SYSTEM - Edit palettes here
+   To add a new palette: copy a [data-palette] block and change the 3 colors
+   ========================================================================== */
+
+/* Default: Violet */
+:root {
+  --palette-dark: #3b0764;
+  --palette-light: #fffbeb;
+  --palette-accent: #9333ea;
+}
+
+/* Rugged Earthly */
+[data-palette="earthly"] {
+  --palette-dark: #4E4B3A;
+  --palette-light: #C4C4A1;
+  --palette-accent: #D77D00;
+}
+
+/* Futuristic Primitive */
+[data-palette="futuristic"] {
+  --palette-dark: #4A4E69;
+  --palette-light: #C9CBAE;
+  --palette-accent: #9A8C98;
+}
+
+/* Harmonious Forms in Bold Colors */
+[data-palette="harmonious"] {
+  --palette-dark: #4B0082;
+  --palette-light: #F5F5F5;
+  --palette-accent: #FFC300;
+}
+
+/* --- Semantic Tokens (Light Mode) --- */
+:root {
+  --color-bg: var(--palette-light);
+  --color-surface: #fff;
+  --color-text: var(--palette-dark);
+  --color-accent: var(--palette-accent);
+  --color-border: #000;
+  --color-shadow: #000;
+}
+
+/* --- Semantic Tokens (Dark Mode) --- */
+.dark {
+  --color-bg: var(--palette-dark);
+  --color-surface: #292524;
+  --color-text: var(--palette-light);
+  --color-border: #fff;
+  --color-shadow: #fff;
+}
+
 @theme {
-  /* Warm Purple/Violet palette */
-  --color-primary-50: #faf5ff;
-  --color-primary-100: #f3e8ff;
-  --color-primary-200: #e9d5ff;
-  --color-primary-300: #d8b4fe;
-  --color-primary-400: #c084fc;
-  --color-primary-500: #a855f7;
-  --color-primary-600: #9333ea;
-  --color-primary-700: #7e22ce;
-  --color-primary-800: #6b21a8;
-  --color-primary-900: #581c87;
-  --color-primary-950: #3b0764;
+  /* Legacy mappings for Tailwind classes */
+  --color-primary-200: var(--palette-light);
+  --color-primary-400: var(--palette-accent);
+  --color-primary-600: var(--palette-accent);
+  --color-primary-700: var(--palette-dark);
+  --color-primary-800: var(--palette-dark);
 
-  /* Warm accent - coral/peach for contrast */
-  --color-accent-400: #fb923c;
-  --color-accent-500: #f97316;
-  --color-accent-600: #ea580c;
+  --color-bg-light: var(--palette-light);
+  --color-bg-dark: var(--palette-dark);
 
-  /* Background colors - warm off-whites */
-  --color-bg-light: #fffbeb;
-  --color-bg-cream: #fef3c7;
-  --color-bg-dark: #1c1917;
-
-  /* Neobrutalist shadow */
-  --shadow-neo: 4px 4px 0 0 #000;
-  --shadow-neo-lg: 6px 6px 0 0 #000;
-  --shadow-neo-hover: 2px 2px 0 0 #000;
+  /* Dynamic shadows - auto-switch in dark mode */
+  --shadow-neo: 4px 4px 0 0 var(--color-shadow);
+  --shadow-neo-lg: 6px 6px 0 0 var(--color-shadow);
+  --shadow-neo-hover: 2px 2px 0 0 var(--color-shadow);
 
   /* Fonts - Single source of truth */
   --font-primary: "JetBrains Mono", monospace;
@@ -89,7 +127,8 @@ body {
 
 /* Hard shadow cards */
 .neo-card {
-  @apply border-2 border-black bg-white;
+  @apply border-2 bg-white;
+  border-color: var(--color-border);
   box-shadow: var(--shadow-neo);
 }
 
@@ -99,30 +138,25 @@ body {
 }
 
 .dark .neo-card {
-  @apply border-white bg-stone-900;
-  box-shadow: 4px 4px 0 0 #fff;
-}
-
-.dark .neo-card:hover {
-  box-shadow: 6px 6px 0 0 #fff;
+  @apply bg-stone-900;
 }
 
 /* Accent card variant */
 .neo-card-accent {
-  @apply border-2 border-black;
+  @apply border-2;
+  border-color: var(--color-border);
   background-color: var(--color-primary-200);
   box-shadow: var(--shadow-neo);
 }
 
 .dark .neo-card-accent {
-  @apply border-white;
   background-color: var(--color-primary-800);
-  box-shadow: 4px 4px 0 0 #fff;
 }
 
 /* Neobrutalist buttons */
 .neo-btn {
-  @apply px-4 py-2 font-bold border-2 border-black bg-white;
+  @apply px-4 py-2 font-bold border-2 bg-white;
+  border-color: var(--color-border);
   box-shadow: var(--shadow-neo);
   transition: transform 0.1s ease-out, box-shadow 0.1s ease-out;
 }
@@ -138,7 +172,8 @@ body {
 }
 
 .neo-btn-primary {
-  @apply px-4 py-2 font-bold border-2 border-black text-white;
+  @apply px-4 py-2 font-bold border-2 text-white;
+  border-color: var(--color-border);
   background-color: var(--color-primary-600);
   box-shadow: var(--shadow-neo);
   transition: transform 0.1s ease-out, box-shadow 0.1s ease-out;
@@ -154,64 +189,44 @@ body {
   box-shadow: none;
 }
 
-.dark .neo-btn,
-.dark .neo-btn-primary {
-  @apply border-white;
-  box-shadow: 4px 4px 0 0 #fff;
-}
-
-.dark .neo-btn:hover,
-.dark .neo-btn-primary:hover {
-  box-shadow: 6px 6px 0 0 #fff;
-}
-
 /* Tags/badges */
 .neo-tag {
-  @apply px-2 py-1 text-xs font-bold border-2 border-black bg-white;
-  box-shadow: 2px 2px 0 0 #000;
+  @apply px-2 py-1 text-xs font-bold border-2 bg-white;
+  border-color: var(--color-border);
+  box-shadow: var(--shadow-neo-hover);
 }
 
 .neo-tag-accent {
-  @apply px-2 py-1 text-xs font-bold border-2 border-black;
+  @apply px-2 py-1 text-xs font-bold border-2;
+  border-color: var(--color-border);
   background-color: var(--color-primary-200);
-  box-shadow: 2px 2px 0 0 #000;
+  box-shadow: var(--shadow-neo-hover);
 }
 
 .dark .neo-tag {
-  @apply border-white bg-stone-800 text-white;
-  box-shadow: 2px 2px 0 0 #fff;
+  @apply bg-stone-800 text-white;
 }
 
 .dark .neo-tag-accent {
-  @apply border-white text-white;
+  @apply text-white;
   background-color: var(--color-primary-700);
-  box-shadow: 2px 2px 0 0 #fff;
 }
 
 /* Borders */
 .neo-border {
-  @apply border-2 border-black;
-}
-
-.dark .neo-border {
-  @apply border-white;
+  @apply border-2;
+  border-color: var(--color-border);
 }
 
 .neo-border-thick {
-  @apply border-4 border-black;
-}
-
-.dark .neo-border-thick {
-  @apply border-white;
+  @apply border-4;
+  border-color: var(--color-border);
 }
 
 /* Section dividers */
 .neo-divider {
-  @apply border-t-4 border-black;
-}
-
-.dark .neo-divider {
-  @apply border-white;
+  @apply border-t-4;
+  border-color: var(--color-border);
 }
 
 /* Custom link styles */
@@ -226,7 +241,8 @@ code {
 }
 
 pre {
-  @apply border-2 border-black bg-white;
+  @apply border-2 bg-white;
+  border-color: var(--color-border);
   box-shadow: var(--shadow-neo);
 }
 
@@ -235,8 +251,7 @@ pre code {
 }
 
 .dark pre {
-  @apply border-white bg-stone-900;
-  box-shadow: 4px 4px 0 0 #fff;
+  @apply bg-stone-900;
 }
 
 /* Headings with display font */
@@ -291,13 +306,9 @@ h1, h2, h3 {
 
 /* Avatar with neobrutalist border */
 .neo-avatar {
-  @apply border-4 border-black;
+  @apply border-4;
+  border-color: var(--color-border);
   box-shadow: var(--shadow-neo);
-}
-
-.dark .neo-avatar {
-  @apply border-white;
-  box-shadow: 4px 4px 0 0 #fff;
 }
 
 /* Stats/numbers with accent background */
@@ -313,20 +324,20 @@ h1, h2, h3 {
 
 /* Icon boxes */
 .neo-icon-box {
-  @apply w-12 h-12 flex items-center justify-center border-2 border-black;
+  @apply w-12 h-12 flex items-center justify-center border-2;
+  border-color: var(--color-border);
   background-color: var(--color-primary-200);
-  box-shadow: 2px 2px 0 0 #000;
+  box-shadow: var(--shadow-neo-hover);
 }
 
 .dark .neo-icon-box {
-  @apply border-white;
   background-color: var(--color-primary-800);
-  box-shadow: 2px 2px 0 0 #fff;
 }
 
 /* Input fields */
 .neo-input {
-  @apply w-full px-4 py-2 border-2 border-black bg-white;
+  @apply w-full px-4 py-2 border-2 bg-white;
+  border-color: var(--color-border);
   box-shadow: var(--shadow-neo);
 }
 
@@ -336,30 +347,28 @@ h1, h2, h3 {
 }
 
 .dark .neo-input {
-  @apply border-white bg-stone-900 text-white;
-  box-shadow: 4px 4px 0 0 #fff;
+  @apply bg-stone-900 text-white;
 }
 
 /* Marquee/highlight sections */
 .neo-highlight {
-  @apply py-4 border-y-4 border-black;
+  @apply py-4 border-y-4;
+  border-color: var(--color-border);
   background-color: var(--color-primary-200);
 }
 
 .dark .neo-highlight {
-  @apply border-white;
   background-color: var(--color-primary-900);
 }
 
 /* Navigation active state */
 .neo-nav-active {
-  @apply border-2 border-black font-bold;
+  @apply border-2 font-bold;
+  border-color: var(--color-border);
   background-color: var(--color-primary-200);
-  box-shadow: 2px 2px 0 0 #000;
+  box-shadow: var(--shadow-neo-hover);
 }
 
 .dark .neo-nav-active {
-  @apply border-white;
   background-color: var(--color-primary-800);
-  box-shadow: 2px 2px 0 0 #fff;
 }

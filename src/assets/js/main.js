@@ -1,4 +1,4 @@
-// Theme toggle
+// Theme and palette toggle
 document.addEventListener("DOMContentLoaded", () => {
   // Theme toggle functionality
   const themeToggles = document.querySelectorAll("#theme-toggle");
@@ -9,6 +9,26 @@ document.addEventListener("DOMContentLoaded", () => {
       localStorage.theme = isDark ? "dark" : "light";
     });
   });
+
+  // Palette switching functionality
+  const palettePicker = document.getElementById("palette-picker");
+  if (palettePicker) {
+    // Set initial value from localStorage
+    if (localStorage.palette) {
+      palettePicker.value = localStorage.palette;
+    }
+
+    palettePicker.addEventListener("change", (e) => {
+      const palette = e.target.value;
+      if (palette === "default") {
+        delete document.documentElement.dataset.palette;
+        delete localStorage.palette;
+      } else {
+        document.documentElement.dataset.palette = palette;
+        localStorage.palette = palette;
+      }
+    });
+  }
 
   // Mobile menu toggle
   const mobileMenuButton = document.getElementById("mobile-menu-button");

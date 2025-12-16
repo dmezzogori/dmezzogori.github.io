@@ -39,11 +39,15 @@
   gtag('config', '{{ site.googleAnalyticsId }}');
 </script>
 
-<!-- Theme initialization (prevent flash) -->
+<!-- Theme and palette initialization (prevent flash) -->
 <script>
   if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
     document.documentElement.classList.add('dark');
   } else {
     document.documentElement.classList.remove('dark');
+  }
+  // Palette initialization
+  if (localStorage.palette) {
+    document.documentElement.dataset.palette = localStorage.palette;
   }
 </script>

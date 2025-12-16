@@ -51,6 +51,13 @@
   --palette-accent: #FF5722;
 }
 
+/* Bold and Raw NEOBRUTALISM */
+[data-palette="boldraw"] {
+  --palette-dark: #333333;
+  --palette-light: #E5E5E5;
+  --palette-accent: #FF6F61;
+}
+
 /* --- Semantic Tokens (Light Mode) --- */
 :root {
   --color-bg: var(--palette-light);

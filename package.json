@@ -7,7 +7,7 @@
     "build:css": "npx tailwindcss -i ./src/assets/css/main.css -o ./_site/assets/css/main.css --minify",
     "watch:css": "npx tailwindcss -i ./src/assets/css/main.css -o ./_site/assets/css/main.css --watch",
     "build:11ty": "eleventy",
-    "watch:11ty": "eleventy --serve",
+    "watch:11ty": "eleventy --serve --port 3000",
     "start": "npm-run-all --parallel watch:*",
     "build": "npm-run-all build:css build:11ty"
   },

@@ -30,14 +30,8 @@
 <!-- Academicons for academic profile icons -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
 
-<!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id={{ site.googleAnalyticsId }}"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag() { dataLayer.push(arguments); }
-  gtag('js', new Date());
-  gtag('config', '{{ site.googleAnalyticsId }}');
-</script>
+<!-- Umami Analytics -->
+<script defer src="{{ site.umamiUrl }}/script.js" data-website-id="{{ site.umamiWebsiteId }}"></script>
 
 <!-- Theme and palette initialization (prevent flash) -->
 <script>

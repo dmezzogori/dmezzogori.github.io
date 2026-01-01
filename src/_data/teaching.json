@@ -4,17 +4,16 @@
       "title": "Applications of AI/ML in Operations and Supply Chain Management",
       "degree": "MSc in Artificial Intelligence Engineering",
       "university": "UniMORE",
-      "role": "Course Owner (100%)",
-      "credits": "48 hours",
+      "role": "Course Owner",
+      "credits": "48 CFU",
       "description": "Comprehensive overview of AI and ML applications in operations and supply chain. Covers discrete event simulation with Python and SimPy, reinforcement learning algorithms for job shop scheduling and intra-logistics optimization. Final project involves agent modeling for highly automated logistics environments."
     },
     {
       "title": "Project Management",
       "degree": "MSc in Mechanical Engineering",
       "university": "UniMORE",
-      "role": "Lecturer (12 CFU)",
-      "credits": "12 CFU of 48 total",
-      "owner": "Prof. Massimo Bertolini",
+      "role": "Lecturer",
+      "credits": "12 CFU",
       "description": "Methodological competencies for industrial project planning, scheduling, and management. Covers cost, time, and quality control techniques, risk management, stakeholder management, KPI analysis and variance analysis."
     },
     {
@@ -46,10 +45,6 @@
     {
       "role": "Technical Associate Editor",
       "venue": "INCOM 2024 (18th IFAC Symposium on Information Control Problems in Manufacturing)"
-    },
-    {
-      "role": "Project Referee",
-      "venue": "Bi-Rex Industry 4.0 Competence Center (2025)"
     }
   ]
 }

@@ -44,22 +44,22 @@
     },
     {
       "title": "Goods-to-Pickers Optimization",
-      "subtitle": "E80 S.p.A.",
-      "description": "20-month industrial research project developing advanced optimization methodologies for order case picking in goods-to-pickers systems. Applied metaheuristics to real-world logistics automation challenges.",
+      "subtitle": "Automated Warehouse Systems",
+      "description": "20-months industrial research project developing advanced optimization methodologies for order case picking in goods-to-pickers systems. Applied metaheuristics to real-world logistics automation challenges.",
       "icon": "factory",
       "technologies": ["Optimization", "Metaheuristics", "Logistics"]
     },
     {
       "title": "Automated Assembly Line Simulation",
-      "subtitle": "SPAL Automotive",
+      "subtitle": "Digital Twin for Automotive",
       "description": "Digital twin development for electric motor assembly lines using discrete event simulation. Focused on performance optimization, downtime reduction, and internal logistics improvement.",
       "icon": "cpu",
       "technologies": ["Digital Twin", "Simulation", "Automotive"]
     },
     {
-      "title": "TEBAN Software Solution",
-      "subtitle": "Kheperer S.r.l.",
-      "description": "12-month project as lead and coordinator developing AI-based solutions for logistics process optimization. Includes internal messaging system for LLM-based data collection and analysis.",
+      "title": "Project Management Software Solution",
+      "subtitle": "ETO Project-based Companies",
+      "description": "24-months project as lead and coordinator developing AI-based solutions for logistics process optimization. Includes internal messaging system for LLM-based data collection and analysis.",
       "icon": "chart",
       "technologies": ["AI", "LLM", "Logistics", "Software Development"]
     }

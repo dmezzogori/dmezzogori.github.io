@@ -46,8 +46,6 @@
   } else {
     document.documentElement.classList.remove('dark');
   }
-  // Palette initialization
-  if (localStorage.palette) {
-    document.documentElement.dataset.palette = localStorage.palette;
-  }
+  // Palette initialization - default to boldraw
+  document.documentElement.dataset.palette = localStorage.palette || 'boldraw';
 </script>

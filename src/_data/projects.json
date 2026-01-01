@@ -1,6 +1,15 @@
 {
   "opensource": [
     {
+      "title": "Simulatte",
+      "subtitle": "Discrete Event Simulation",
+      "description": "A Python framework for discrete event simulation of logistics and manufacturing systems. Designed for warehouse simulation, production line analysis, and intra-logistics process modeling.",
+      "icon": "cpu",
+      "technologies": ["Python", "SimPy", "Simulation"],
+      "github": "https://github.com/dmezzogori/simulatte",
+      "docs": "https://simulatte.dev"
+    },
+    {
       "title": "Kwik",
       "subtitle": "REST API Framework",
       "description": "A modern, batteries-included, business-oriented REST API framework built on Python 3.12+. Provides pre-configured tooling including pagination, filtering, and sorting with a unified interface.",
@@ -8,14 +17,6 @@
       "technologies": ["Python", "FastAPI", "SQLAlchemy", "Pydantic"],
       "github": "https://github.com/dmezzogori/kwik",
       "docs": "https://davide.mezzogori.com/kwik/"
-    },
-    {
-      "title": "Simulatte",
-      "subtitle": "Discrete Event Simulation",
-      "description": "A Python framework for discrete event simulation of logistics and manufacturing systems. Designed for warehouse simulation, production line analysis, and intra-logistics process modeling.",
-      "icon": "cpu",
-      "technologies": ["Python", "SimPy", "Simulation"],
-      "github": "https://github.com/dmezzogori/simulatte"
     }
   ],
   "industrial": [

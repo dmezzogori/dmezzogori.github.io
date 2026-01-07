@@ -2,6 +2,7 @@
   "permissions": {
     "allow": [
       "Bash(git add:*)",
+      "Bash(git checkout:*)",
       "Bash(git commit:*)",
       "Bash(git show:*)",
       "Bash(git mv:*)",
@@ -13,7 +14,10 @@
       "Bash(wc:*)",
       "Bash(gh run list:*)",
       "Bash(gh run view:*)",
+      "Bash(npm install:*)",
       "Bash(npm run build:*)",
+      "Bash(npm run build:css:*)",
+      "Bash(npm run watch:11ty:*)",
       "WebSearch"
     ],
     "ask": [

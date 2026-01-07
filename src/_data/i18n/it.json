@@ -1,137 +1,137 @@
 {
   "nav": {
-    "about": "About",
-    "research": "Research",
-    "projects": "Projects",
-    "teaching": "Teaching",
-    "contact": "Contact"
+    "about": "Chi sono",
+    "research": "Ricerca",
+    "projects": "Progetti",
+    "teaching": "Didattica",
+    "contact": "Contatti"
   },
   "hero": {
-    "tagline": "Research Scientist \u00b7 AI & Operations Expert",
-    "subtitle": "Bridging Academia and Industry through AI, Machine Learning, and Operations Research"
+    "tagline": "Ricercatore · Esperto di AI & Operations",
+    "subtitle": "Unisco il mondo accademico e industriale attraverso AI, Machine Learning e Ricerca Operativa"
   },
   "pages": {
     "research": {
-      "title": "Research",
-      "description": "My research focuses on the application of Artificial Intelligence and Machine Learning to operations management, logistics optimization, and manufacturing systems."
+      "title": "Ricerca",
+      "description": "La mia ricerca si concentra sull'applicazione di Artificial Intelligence e Machine Learning alla gestione delle operations, all'ottimizzazione logistica e ai sistemi produttivi."
     },
     "projects": {
-      "title": "Projects",
-      "description": "From open source frameworks to industrial research applications, here are the projects I've been working on."
+      "title": "Progetti",
+      "description": "Da framework open source ad applicazioni di ricerca industriale, ecco i progetti su cui ho lavorato."
     },
     "teaching": {
-      "title": "Teaching",
-      "description": "I teach courses on AI/ML applications in operations, project management, and data analytics at UniMORE."
+      "title": "Didattica",
+      "description": "Insegno corsi su applicazioni AI/ML nelle operations, project management e data analytics presso UniMORE."
     },
     "contact": {
-      "title": "Get in Touch",
-      "description": "Interested in research collaborations, industrial projects, or teaching inquiries? I'd love to hear from you."
+      "title": "Contattami",
+      "description": "Interessato a collaborazioni di ricerca, progetti industriali o informazioni sulla didattica? Sarò felice di sentirti."
     },
     "blog": {
       "title": "Blog",
-      "description": "Thoughts on AI, ML, research, software development, and more.",
-      "noPosts": "No posts yet. Check back soon!"
+      "description": "Riflessioni su AI, ML, ricerca, sviluppo software e altro ancora.",
+      "noPosts": "Nessun post ancora. Torna a trovarmi!"
     }
   },
   "sections": {
-    "aboutMe": "About Me",
-    "whatIDo": "What I Do",
-    "researchInterests": "Research Interests",
-    "selectedPublications": "Selected Publications",
-    "academicProfiles": "Academic Profiles",
+    "aboutMe": "Chi Sono",
+    "whatIDo": "Cosa Faccio",
+    "researchInterests": "Interessi di Ricerca",
+    "selectedPublications": "Pubblicazioni Selezionate",
+    "academicProfiles": "Profili Accademici",
     "openSource": "Open Source",
-    "industrialProjects": "Industrial Projects",
-    "courses": "Courses",
-    "phdSupervision": "PhD Supervision",
-    "academicService": "Academic Service",
-    "sendMessage": "Send a Message",
-    "otherWaysToConnect": "Other Ways to Connect",
-    "quickLinks": "Quick Links",
-    "connect": "Connect",
+    "industrialProjects": "Progetti Industriali",
+    "courses": "Corsi",
+    "phdSupervision": "Supervisione Dottorati",
+    "academicService": "Servizio Accademico",
+    "sendMessage": "Invia un Messaggio",
+    "otherWaysToConnect": "Altri Modi per Contattarmi",
+    "quickLinks": "Link Rapidi",
+    "connect": "Connettiti",
     "email": "Email",
-    "institution": "Institution",
-    "socialProfiles": "Social & Academic Profiles"
+    "institution": "Istituzione",
+    "socialProfiles": "Profili Social e Accademici"
   },
   "cards": {
     "research": {
-      "title": "Research",
-      "description": "AI/ML for Operations, Logistics Optimization, Simulation, Reinforcement Learning"
+      "title": "Ricerca",
+      "description": "AI/ML per Operations, Ottimizzazione Logistica, Simulazione, Reinforcement Learning"
     },
     "openSource": {
       "title": "Open Source",
       "description": "Kwik REST Framework, Simulatte Simulation Library"
     },
     "industry": {
-      "title": "Industry",
-      "description": "Technology Transfer, Industrial AI, Kheperer Startup"
+      "title": "Industria",
+      "description": "Technology Transfer, Industrial AI, Startup Kheperer"
     },
     "teaching": {
-      "title": "Teaching",
-      "description": "AI/ML in Operations, Project Management, PhD Supervision"
+      "title": "Didattica",
+      "description": "AI/ML nelle Operations, Project Management, Supervisione Dottorati"
     }
   },
   "stats": {
-    "publications": "Publications",
-    "asnQualified": "Assoc. Prof. Qualified",
-    "supervisor": "Supervisor",
-    "cofounder": "Kheperer Startup"
+    "publications": "Pubblicazioni",
+    "asnQualified": "Abilitato Associato",
+    "supervisor": "Supervisore",
+    "cofounder": "Startup Kheperer"
   },
   "form": {
-    "name": "Name",
+    "name": "Nome",
     "email": "Email",
-    "topic": "Topic",
-    "message": "Message",
-    "sendMessage": "Send Message",
+    "topic": "Argomento",
+    "message": "Messaggio",
+    "sendMessage": "Invia Messaggio",
     "placeholders": {
-      "name": "Your name",
-      "email": "your@email.com",
-      "message": "Your message..."
+      "name": "Il tuo nome",
+      "email": "tua@email.com",
+      "message": "Il tuo messaggio..."
     },
     "topics": {
-      "research": "Research Collaboration",
-      "industry": "Industrial Project",
-      "teaching": "Teaching Inquiry",
+      "research": "Collaborazione di Ricerca",
+      "industry": "Progetto Industriale",
+      "teaching": "Informazioni Didattica",
       "opensource": "Open Source",
-      "other": "Other"
+      "other": "Altro"
     }
   },
   "links": {
     "github": "GitHub",
     "docs": "Docs",
     "paper": "Paper",
-    "previous": "Previous",
-    "next": "Next"
+    "previous": "Precedente",
+    "next": "Successivo"
   },
   "footer": {
-    "tagline": "Research Scientist at UniMORE. Bridging academia and industry through AI, Machine Learning, and Operations Research.",
-    "copyright": "All rights reserved.",
+    "tagline": "Ricercatore presso UniMORE. Unisco il mondo accademico e industriale attraverso AI, Machine Learning e Ricerca Operativa.",
+    "copyright": "Tutti i diritti riservati.",
     "palette": "Palette:"
   },
   "accessibility": {
-    "openMenu": "Open menu",
-    "toggleDarkMode": "Toggle dark mode",
-    "switchLanguage": "Switch language"
+    "openMenu": "Apri menu",
+    "toggleDarkMode": "Cambia modalità scura",
+    "switchLanguage": "Cambia lingua"
   },
   "institution": {
     "name": "UniMORE",
-    "department": "Department of Engineering \"Enzo Ferrari\"",
-    "location": "Modena, Italy"
+    "department": "Dipartimento di Ingegneria \"Enzo Ferrari\"",
+    "location": "Modena, Italia"
   },
   "research": {
     "interests": [
-      "AI/ML for Operations Management",
-      "Logistics and Supply Chain Optimization",
-      "Discrete Event Simulation",
-      "Metaheuristics for Scheduling and Picking",
-      "Reinforcement Learning for Production Planning",
-      "Automated Storage and Retrieval Systems (AS/RS)",
-      "Digital Twins for Manufacturing",
-      "RFID Applications in Retail",
-      "Lean Manufacturing and Process Improvement"
+      "AI/ML per la Gestione delle Operations",
+      "Ottimizzazione Logistica e Supply Chain",
+      "Simulazione a Eventi Discreti",
+      "Metaeuristiche per Scheduling e Picking",
+      "Reinforcement Learning per la Pianificazione della Produzione",
+      "Sistemi Automatici di Stoccaggio e Prelievo (AS/RS)",
+      "Digital Twin per il Manifatturiero",
+      "Applicazioni RFID nel Retail",
+      "Lean Manufacturing e Miglioramento dei Processi"
     ]
   },
   "teaching": {
-    "courseOwner": "Course Owner"
+    "courseOwner": "Titolare del Corso"
   },
   "dates": {
     "locale": "it-IT"

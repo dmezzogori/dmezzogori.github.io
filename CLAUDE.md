@@ -64,4 +64,3 @@ Font: JetBrains Mono (monospace throughout)
 ## Deployment
 
 - **GitHub Pages:** Auto-deploy via GitHub Actions on push to `main`
-- **Docker:** `docker compose -f docker-compose.prod.yml up -d` runs at localhost:8080

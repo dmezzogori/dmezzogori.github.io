@@ -15,7 +15,6 @@ Personal portfolio website showcasing my research, open-source projects, industr
 - **Styling**: [Tailwind CSS](https://tailwindcss.com/) v4.1.17 with typography plugin
 - **Templating**: Nunjucks
 - **Deployment**: GitHub Pages via GitHub Actions
-- **Container**: Docker + Nginx (optional)
 
 ## Prerequisites
 
@@ -44,14 +43,4 @@ The site runs at `http://localhost:3000` with hot reload enabled.
 
 ## Deployment
 
-### GitHub Pages
-
-Automatic deployment via GitHub Actions on push to `main` branch.
-
-### Docker (Optional)
-
-```bash
-docker compose -f docker-compose.prod.yml up -d
-```
-
-The containerized site runs at `http://localhost:8080`.
+Automatic deployment via GitHub Pages on push to `main` branch.

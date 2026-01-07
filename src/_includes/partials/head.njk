@@ -11,12 +11,17 @@
 <meta name="theme-color" content="#0c4a6e" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#082f49" media="(prefers-color-scheme: dark)">
 
+<!-- Multilingual support -->
+<meta name="content-language" content="en, it">
+
 <!-- Open Graph -->
 <meta property="og:title" content="{{ title or site.title }}">
 <meta property="og:description" content="{{ description or site.description }}">
 <meta property="og:type" content="website">
 <meta property="og:url" content="{{ site.url }}{{ page.url }}">
 <meta property="og:image" content="{{ site.url }}/assets/images/avatar.jpg">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="it_IT">
 
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary">
@@ -33,7 +38,7 @@
 <!-- Umami Analytics -->
 <script defer src="{{ site.umamiUrl }}/script.js" data-website-id="{{ site.umamiWebsiteId }}"></script>
 
-<!-- Theme and palette initialization (prevent flash) -->
+<!-- Theme, palette, and language initialization (prevent flash) -->
 <script>
   if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
     document.documentElement.classList.add('dark');
@@ -42,4 +47,14 @@
   }
   // Palette initialization - default to boldraw
   document.documentElement.dataset.palette = localStorage.palette || 'boldraw';
+  // Language initialization - detect browser language or use stored preference
+  (function() {
+    var lang = localStorage.getItem('lang');
+    if (!lang) {
+      var browserLang = navigator.language?.split('-')[0];
+      lang = browserLang === 'it' ? 'it' : 'en';
+    }
+    document.documentElement.lang = lang;
+    document.documentElement.dataset.lang = lang;
+  })();
 </script>

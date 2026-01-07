@@ -4,6 +4,18 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/assets/js");
   eleventyConfig.addPassthroughCopy("CNAME");
 
+  // Passthrough copy for i18n JSON files (for async loading)
+  eleventyConfig.addPassthroughCopy({
+    "src/_data/i18n/*.json": "assets/i18n",
+  });
+
+  // Load i18n translations as global data
+  eleventyConfig.addGlobalData("i18n", () => {
+    const en = require("./src/_data/i18n/en.json");
+    const it = require("./src/_data/i18n/it.json");
+    return { en, it };
+  });
+
   // Watch CSS for changes
   eleventyConfig.addWatchTarget("src/assets/css/");
 

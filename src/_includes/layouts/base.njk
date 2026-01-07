@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en" data-lang="en" class="scroll-smooth">
 <head>
   {% include "partials/head.njk" %}
 </head>
@@ -12,7 +12,13 @@
 
   {% include "components/footer.njk" %}
 
+  <!-- i18n translations embedded for instant access -->
+  <script id="i18n-data" type="application/json">
+    {{ i18n | dump | safe }}
+  </script>
+
   <!-- JavaScript -->
+  <script src="/assets/js/i18n.js" defer></script>
   <script src="/assets/js/main.js" defer></script>
 </body>
 </html>

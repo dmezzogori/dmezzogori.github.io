@@ -6,21 +6,21 @@
         <h3 class="text-sm font-bold text-black dark:text-white uppercase tracking-wider mb-4 font-display border-b-2 border-black dark:border-white pb-2">
           Davide Mezzogori
         </h3>
-        <p class="text-stone-800 dark:text-stone-300 text-sm">
+        <p class="text-stone-800 dark:text-stone-300 text-sm" data-i18n="footer.tagline">
           Research Scientist at UniMORE. Bridging academia and industry through AI, Machine Learning, and Operations Research.
         </p>
       </div>
 
       <!-- Quick Links -->
       <div class="neo-card p-6">
-        <h3 class="text-sm font-bold text-black dark:text-white uppercase tracking-wider mb-4 font-display border-b-2 border-black dark:border-white pb-2">
+        <h3 class="text-sm font-bold text-black dark:text-white uppercase tracking-wider mb-4 font-display border-b-2 border-black dark:border-white pb-2" data-i18n="sections.quickLinks">
           Quick Links
         </h3>
         <ul class="space-y-2">
           {% for item in navigation %}
             <li>
-              <a href="{{ item.url }}" class="text-stone-800 dark:text-stone-300 hover:text-primary-600 dark:hover:text-primary-400 text-sm font-semibold no-underline hover:underline">
-                {{ item.text }}
+              <a href="{{ item.url }}" class="text-stone-800 dark:text-stone-300 hover:text-primary-600 dark:hover:text-primary-400 text-sm font-semibold no-underline hover:underline" data-i18n="nav.{{ item.key }}">
+                {{ i18n.en.nav[item.key] }}
               </a>
             </li>
           {% endfor %}
@@ -29,7 +29,7 @@
 
       <!-- Connect -->
       <div class="neo-card p-6">
-        <h3 class="text-sm font-bold text-black dark:text-white uppercase tracking-wider mb-4 font-display border-b-2 border-black dark:border-white pb-2">
+        <h3 class="text-sm font-bold text-black dark:text-white uppercase tracking-wider mb-4 font-display border-b-2 border-black dark:border-white pb-2" data-i18n="sections.connect">
           Connect
         </h3>
         <div class="flex flex-wrap gap-3">
@@ -61,25 +61,15 @@
       </div>
     </div>
 
-    <!-- Copyright & Palette Picker -->
+    <!-- Copyright & Language Toggle -->
     <div class="mt-8 pt-8 border-t-4 border-black dark:border-white">
       <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
         <p class="text-stone-800 dark:text-stone-300 text-sm font-semibold">
-          &copy; {% year %} Davide Mezzogori. All rights reserved.
+          &copy; {% year %} Davide Mezzogori. <span data-i18n="footer.copyright">All rights reserved.</span>
         </p>
-        <!-- Palette Picker (hidden) -->
-        <div class="hidden flex items-center gap-2">
-          <span class="text-xs font-bold text-stone-600 dark:text-stone-400 uppercase tracking-wide">Palette:</span>
-          <select id="palette-picker"
-                  class="px-2 py-1 text-xs font-bold border-2 border-black dark:border-white bg-white dark:bg-stone-900 text-black dark:text-white cursor-pointer"
-                  style="box-shadow: var(--shadow-neo-hover);">
-            <option value="default">Violet</option>
-            <option value="earthly">Earthly</option>
-            <option value="futuristic">Futuristic</option>
-            <option value="harmonious">Harmonious</option>
-            <option value="concrete">Concrete</option>
-            <option value="boldraw">Bold Raw</option>
-          </select>
+        <!-- Language Toggle -->
+        <div class="flex items-center gap-2">
+          {% include "components/lang-toggle.njk" %}
         </div>
       </div>
     </div>

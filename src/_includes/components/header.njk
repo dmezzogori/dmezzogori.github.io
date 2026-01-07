@@ -10,15 +10,19 @@
       <div class="hidden md:flex items-center space-x-2">
         {% for item in navigation %}
           <a href="{{ item.url }}"
+             data-i18n="nav.{{ item.key }}"
              class="px-3 py-1.5 text-sm font-bold no-underline
                     {% if page.url == item.url %}
                       neo-nav-active
                     {% else %}
                       text-black dark:text-white border-2 border-transparent hover:border-black dark:hover:border-white hover:bg-primary-100 dark:hover:bg-primary-900
                     {% endif %}">
-            {{ item.text }}
+            {{ i18n.en.nav[item.key] }}
           </a>
         {% endfor %}
+
+        <!-- Language Toggle -->
+        {% include "components/lang-toggle.njk" %}
 
         <!-- Theme Toggle -->
         {% include "components/theme-toggle.njk" %}
@@ -26,11 +30,13 @@
 
       <!-- Mobile menu button -->
       <div class="flex md:hidden items-center space-x-2">
+        {% include "components/lang-toggle.njk" %}
         {% include "components/theme-toggle.njk" %}
         <button type="button" id="mobile-menu-button"
                 class="p-2 border-2 border-black dark:border-white text-black dark:text-white hover:bg-primary-200 dark:hover:bg-primary-800"
-                aria-expanded="false" aria-controls="mobile-menu">
-          <span class="sr-only">Open menu</span>
+                aria-expanded="false" aria-controls="mobile-menu"
+                data-i18n-aria="accessibility.openMenu">
+          <span class="sr-only" data-i18n="accessibility.openMenu">Open menu</span>
           <!-- Hamburger icon -->
           <svg class="h-6 w-6" id="menu-icon-open" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
@@ -48,13 +54,14 @@
       <div class="flex flex-col space-y-2 border-t-2 border-black dark:border-white pt-4">
         {% for item in navigation %}
           <a href="{{ item.url }}"
+             data-i18n="nav.{{ item.key }}"
              class="px-3 py-2 text-base font-bold no-underline
                     {% if page.url == item.url %}
                       neo-nav-active
                     {% else %}
                       text-black dark:text-white border-2 border-transparent hover:border-black dark:hover:border-white hover:bg-primary-100 dark:hover:bg-primary-900
                     {% endif %}">
-            {{ item.text }}
+            {{ i18n.en.nav[item.key] }}
           </a>
         {% endfor %}
       </div>

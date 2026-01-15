@@ -28,35 +28,35 @@
 [data-palette="earthly"] {
   --palette-dark: #4E4B3A;
   --palette-light: #C4C4A1;
-  --palette-accent: #D77D00;
+  --palette-accent: #A05000;  /* Rich amber - balanced for light mode */
 }
 
 /* Futuristic Primitive */
 [data-palette="futuristic"] {
   --palette-dark: #4A4E69;
   --palette-light: #C9CBAE;
-  --palette-accent: #9A8C98;
+  --palette-accent: #6B5B7A;  /* Muted purple - works on light backgrounds */
 }
 
 /* Harmonious Forms in Bold Colors */
 [data-palette="harmonious"] {
   --palette-dark: #4B0082;
   --palette-light: #F5F5F5;
-  --palette-accent: #FFC300;
+  --palette-accent: #D97706;  /* Amber gold - passes AA on white */
 }
 
 /* Concrete Jungle */
 [data-palette="concrete"] {
   --palette-dark: #212121;
   --palette-light: #F5F5F5;
-  --palette-accent: #FF5722;
+  --palette-accent: #C62828;  /* Deep red - high contrast on light */
 }
 
 /* Bold and Raw NEOBRUTALISM */
 [data-palette="boldraw"] {
   --palette-dark: #333333;
   --palette-light: #E5E5E5;
-  --palette-accent: #FF6F61;
+  --palette-accent: #C62828;  /* Deep red - punchy neobrutalist feel */
 }
 
 /* --- Semantic Tokens (Light Mode) --- */
@@ -65,6 +65,7 @@
   --color-surface: #fff;
   --color-text: var(--palette-dark);
   --color-accent: var(--palette-accent);
+  --color-link: var(--palette-dark);  /* Use dark for links - always high contrast on light */
   --color-border: #000;
   --color-shadow: #000;
 }
@@ -74,6 +75,7 @@
   --color-bg: var(--palette-dark);
   --color-surface: #292524;
   --color-text: var(--palette-light);
+  --color-link: var(--palette-light);  /* Use light for links - always high contrast on dark */
   --color-border: #fff;
   --color-shadow: #fff;
 }
@@ -297,13 +299,12 @@ nav, button, .neo-btn, .neo-tag, .neo-nav-active, label, th {
 }
 
 .prose a {
-  @apply text-primary-600 font-semibold;
+  @apply font-semibold;
+  color: var(--color-link);
   text-decoration-thickness: 2px;
 }
 
-.dark .prose a {
-  @apply text-primary-400;
-}
+/* Dark mode uses --color-link which is already set to palette-light */
 
 .prose strong {
   @apply font-bold;

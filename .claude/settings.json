@@ -20,12 +20,15 @@
       "Bash(npm run watch:11ty:*)",
       "WebSearch"
     ],
-    "ask": [
-      "Bash(git push:*)"
-    ],
     "deny": [
       "Bash(rm:*)"
+    ],
+    "ask": [
+      "Bash(git push:*)"
     ]
   },
-  "enabledMcpjsonServers": []
+  "enabledMcpjsonServers": [],
+  "enabledPlugins": {
+    "impeccable@impeccable": true
+  }
 }

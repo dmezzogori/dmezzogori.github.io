@@ -7,16 +7,12 @@
       </a>
 
       <!-- Desktop Navigation -->
-      <div class="hidden md:flex items-center space-x-2">
+      <div class="hidden md:flex items-center space-x-3">
         {% for item in navigation %}
           <a href="{{ item.url }}"
              data-i18n="nav.{{ item.key }}"
-             class="px-3 py-1.5 text-sm font-bold no-underline
-                    {% if page.url == item.url %}
-                      neo-nav-active
-                    {% else %}
-                      text-black dark:text-white border-2 border-transparent hover:border-black dark:hover:border-white hover:bg-primary-100 dark:hover:bg-primary-900
-                    {% endif %}">
+             class="px-3 py-1.5 text-sm no-underline text-black dark:text-white
+                    {% if page.url == item.url %}neo-nav-active{% else %}neo-nav-item{% endif %}">
             {{ i18n.en.nav[item.key] }}
           </a>
         {% endfor %}
@@ -55,12 +51,8 @@
         {% for item in navigation %}
           <a href="{{ item.url }}"
              data-i18n="nav.{{ item.key }}"
-             class="px-3 py-2 text-base font-bold no-underline
-                    {% if page.url == item.url %}
-                      neo-nav-active
-                    {% else %}
-                      text-black dark:text-white border-2 border-transparent hover:border-black dark:hover:border-white hover:bg-primary-100 dark:hover:bg-primary-900
-                    {% endif %}">
+             class="px-3 py-2 text-base no-underline text-black dark:text-white
+                    {% if page.url == item.url %}neo-nav-active{% else %}neo-nav-item{% endif %}">
             {{ i18n.en.nav[item.key] }}
           </a>
         {% endfor %}

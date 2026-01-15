@@ -392,16 +392,38 @@ nav, button, .neo-btn, .neo-tag, .neo-nav-active, label, th {
   background-color: var(--color-primary-900);
 }
 
-/* Navigation active state */
-.neo-nav-active {
-  @apply border-2 font-bold;
+/* Navigation - Bold neobrutalist treatment */
+.neo-nav-item {
+  @apply border-2 font-bold uppercase tracking-wide;
+  position: relative;
+  border-color: transparent;
+  transition: transform 0.15s ease-out, box-shadow 0.15s ease-out, background-color 0.15s ease-out, border-color 0.15s ease-out;
+}
+
+.neo-nav-item:hover {
+  z-index: 10;
   border-color: var(--color-border);
-  background-color: var(--color-primary-200);
-  box-shadow: var(--shadow-neo-hover);
+  background-color: var(--color-primary-100);
+  transform: translate(-2px, -2px);
+  box-shadow: 2px 2px 0 0 var(--color-border);
+}
+
+.dark .neo-nav-item:hover {
+  background-color: var(--color-primary-900);
+}
+
+/* Active state - prominent "you are here" signal */
+.neo-nav-active {
+  @apply border-2 font-bold uppercase tracking-wide;
+  position: relative;
+  z-index: 5;
+  border-color: var(--color-border);
+  background-color: var(--color-primary-300);
+  box-shadow: var(--shadow-neo);
 }
 
 .dark .neo-nav-active {
-  background-color: var(--color-primary-800);
+  background-color: var(--color-primary-700);
 }
 
 /* ==========================================================================

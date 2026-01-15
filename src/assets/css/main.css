@@ -1,5 +1,6 @@
-/* JetBrains Mono - Display/UI font | Source Sans 3 - Body font */
-@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Source+Sans+3:wght@400;500;600;700&display=swap");
+/* JetBrains Mono - Display/UI font | Source Sans 3 - Body font
+   Weights: 400 (normal), 600 (semibold), 700 (bold) - reduced from 7 to 5 weights for faster loading */
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Source+Sans+3:wght@400;600;700&display=swap");
 
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
@@ -141,6 +142,13 @@ body {
 /* But allow transform transitions for hover effects */
 .neo-hover {
   transition: transform 0.1s ease-out, box-shadow 0.1s ease-out;
+}
+
+/* Sticky header performance optimization */
+header.sticky {
+  contain: layout style;
+  will-change: transform;
+  backface-visibility: hidden;
 }
 
 /* ==========================================================================

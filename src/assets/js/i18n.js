@@ -18,6 +18,26 @@
     it: null,
   };
 
+  // DOM element cache for performance (updated on init and when DOM changes)
+  let elementsCache = null;
+
+  /**
+   * Build or refresh the DOM elements cache
+   * This avoids multiple querySelectorAll calls on each language change
+   */
+  function buildElementsCache() {
+    elementsCache = {
+      i18n: document.querySelectorAll("[data-i18n]"),
+      placeholder: document.querySelectorAll("[data-i18n-placeholder]"),
+      aria: document.querySelectorAll("[data-i18n-aria]"),
+      title: document.querySelectorAll("[data-i18n-title]"),
+      content: document.querySelectorAll("[data-i18n-content]"),
+      html: document.querySelectorAll("[data-i18n-html]"),
+      langLabel: document.querySelectorAll(".lang-label"),
+      date: document.querySelectorAll("[data-date]"),
+    };
+  }
+
   /**
    * Detect the user's preferred language
    * Priority: 1) localStorage, 2) browser language, 3) default (en)
@@ -57,8 +77,11 @@
     document.documentElement.lang = lang;
     document.documentElement.dataset.lang = lang;
 
+    // Ensure cache exists
+    if (!elementsCache) buildElementsCache();
+
     // Translate elements with data-i18n attribute (text content)
-    document.querySelectorAll("[data-i18n]").forEach((el) => {
+    elementsCache.i18n.forEach((el) => {
       const key = el.getAttribute("data-i18n");
       const value = getTranslation(t, key);
       if (value !== undefined) {
@@ -67,7 +90,7 @@
     });
 
     // Translate placeholder attributes
-    document.querySelectorAll("[data-i18n-placeholder]").forEach((el) => {
+    elementsCache.placeholder.forEach((el) => {
       const key = el.getAttribute("data-i18n-placeholder");
       const value = getTranslation(t, key);
       if (value !== undefined) {
@@ -76,7 +99,7 @@
     });
 
     // Translate aria-label attributes
-    document.querySelectorAll("[data-i18n-aria]").forEach((el) => {
+    elementsCache.aria.forEach((el) => {
       const key = el.getAttribute("data-i18n-aria");
       const value = getTranslation(t, key);
       if (value !== undefined) {
@@ -85,7 +108,7 @@
     });
 
     // Translate title attributes
-    document.querySelectorAll("[data-i18n-title]").forEach((el) => {
+    elementsCache.title.forEach((el) => {
       const key = el.getAttribute("data-i18n-title");
       const value = getTranslation(t, key);
       if (value !== undefined) {
@@ -94,7 +117,7 @@
     });
 
     // Update language toggle button labels
-    document.querySelectorAll(".lang-label").forEach((el) => {
+    elementsCache.langLabel.forEach((el) => {
       el.textContent = lang.toUpperCase();
     });
 
@@ -113,7 +136,9 @@
     const locale = t?.dates?.locale || (lang === "it" ? "it-IT" : "en-US");
     const format = { year: "numeric", month: "long", day: "numeric" };
 
-    document.querySelectorAll("[data-date]").forEach((el) => {
+    // Use cached elements
+    if (!elementsCache) buildElementsCache();
+    elementsCache.date.forEach((el) => {
       const isoDate = el.getAttribute("data-date");
       if (isoDate) {
         const date = new Date(isoDate);
@@ -129,8 +154,11 @@
     const content = contentTranslations[lang];
     if (!content) return;
 
+    // Ensure cache exists
+    if (!elementsCache) buildElementsCache();
+
     // Translate content with data-i18n-content attribute
-    document.querySelectorAll("[data-i18n-content]").forEach((el) => {
+    elementsCache.content.forEach((el) => {
       const key = el.getAttribute("data-i18n-content");
       const value = getTranslation(content, key);
       if (value !== undefined) {
@@ -139,7 +167,7 @@
     });
 
     // Translate HTML content (like About section)
-    document.querySelectorAll("[data-i18n-html]").forEach((el) => {
+    elementsCache.html.forEach((el) => {
       const key = el.getAttribute("data-i18n-html");
       const value = getTranslation(content, key);
       if (value !== undefined) {
@@ -270,6 +298,9 @@
   async function init() {
     const lang = detectLanguage();
 
+    // Build DOM elements cache once at init
+    buildElementsCache();
+
     // Load translations for detected language
     await loadTranslations(lang);
 
@@ -283,9 +314,11 @@
     // Apply translations
     applyTranslations(lang);
 
-    // Set up language toggle buttons
-    document.querySelectorAll(".lang-toggle").forEach((toggle) => {
-      toggle.addEventListener("click", toggleLanguage);
+    // Set up language toggle buttons using event delegation on body
+    document.body.addEventListener("click", (e) => {
+      if (e.target.closest(".lang-toggle")) {
+        toggleLanguage();
+      }
     });
   }
 
@@ -303,5 +336,6 @@
     getLanguage,
     loadTranslations,
     applyTranslations,
+    refreshCache: buildElementsCache, // Call after dynamically adding i18n elements
   };
 })();

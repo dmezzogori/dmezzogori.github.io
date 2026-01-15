@@ -4,8 +4,17 @@
     <div class="flex flex-col md:flex-row items-center gap-8 md:gap-16">
       <!-- Avatar with neobrutalist shadow -->
       <div class="flex-shrink-0">
-        <img src="/assets/images/avatar.jpg" alt="Davide Mezzogori"
-             class="w-44 h-44 md:w-56 md:h-56 object-cover neo-avatar">
+        <picture>
+          <source type="image/webp"
+                  srcset="/assets/images/avatar-224.webp 224w, /assets/images/avatar-448.webp 448w"
+                  sizes="(min-width: 768px) 224px, 176px">
+          <img src="/assets/images/avatar-448.jpg"
+               srcset="/assets/images/avatar-224.jpg 224w, /assets/images/avatar-448.jpg 448w"
+               sizes="(min-width: 768px) 224px, 176px"
+               alt="Davide Mezzogori"
+               width="224" height="224"
+               class="w-44 h-44 md:w-56 md:h-56 object-cover neo-avatar">
+        </picture>
       </div>
 
       <!-- Content -->

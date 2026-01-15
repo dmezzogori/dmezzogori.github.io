@@ -1,64 +1,69 @@
-// Theme and palette toggle
+// Theme and palette toggle with event delegation for performance
 document.addEventListener("DOMContentLoaded", () => {
-  // Theme toggle functionality
-  const themeToggles = document.querySelectorAll("#theme-toggle");
-
-  themeToggles.forEach((toggle) => {
-    toggle.addEventListener("click", () => {
-      const isDark = document.documentElement.classList.toggle("dark");
-      localStorage.theme = isDark ? "dark" : "light";
-    });
-  });
-
-  // Palette switching functionality
+  // Cache DOM references
+  const html = document.documentElement;
   const palettePicker = document.getElementById("palette-picker");
-  if (palettePicker) {
-    // Set initial value from localStorage
-    if (localStorage.palette) {
-      palettePicker.value = localStorage.palette;
-    }
-
-    palettePicker.addEventListener("change", (e) => {
-      const palette = e.target.value;
-      if (palette === "default") {
-        delete document.documentElement.dataset.palette;
-        delete localStorage.palette;
-      } else {
-        document.documentElement.dataset.palette = palette;
-        localStorage.palette = palette;
-      }
-    });
-  }
-
-  // Mobile menu toggle
   const mobileMenuButton = document.getElementById("mobile-menu-button");
   const mobileMenu = document.getElementById("mobile-menu");
   const menuIconOpen = document.getElementById("menu-icon-open");
   const menuIconClose = document.getElementById("menu-icon-close");
 
-  if (mobileMenuButton && mobileMenu) {
-    mobileMenuButton.addEventListener("click", () => {
-      const isExpanded =
-        mobileMenuButton.getAttribute("aria-expanded") === "true";
+  // Set initial palette picker value from localStorage
+  if (palettePicker && localStorage.palette) {
+    palettePicker.value = localStorage.palette;
+  }
+
+  // Helper function to close mobile menu
+  function closeMobileMenu() {
+    if (mobileMenu && mobileMenuButton) {
+      mobileMenu.classList.add("hidden");
+      mobileMenuButton.setAttribute("aria-expanded", "false");
+      if (menuIconOpen && menuIconClose) {
+        menuIconOpen.classList.remove("hidden");
+        menuIconClose.classList.add("hidden");
+      }
+    }
+  }
+
+  // Use event delegation on document.body for better performance
+  document.body.addEventListener("click", (e) => {
+    // Theme toggle - use data attribute for more reliable selection
+    if (e.target.closest("#theme-toggle")) {
+      const isDark = html.classList.toggle("dark");
+      localStorage.theme = isDark ? "dark" : "light";
+      return;
+    }
+
+    // Mobile menu button
+    if (e.target.closest("#mobile-menu-button")) {
+      const isExpanded = mobileMenuButton.getAttribute("aria-expanded") === "true";
       mobileMenuButton.setAttribute("aria-expanded", !isExpanded);
       mobileMenu.classList.toggle("hidden");
-
       if (menuIconOpen && menuIconClose) {
         menuIconOpen.classList.toggle("hidden");
         menuIconClose.classList.toggle("hidden");
       }
-    });
+      return;
+    }
 
-    // Close mobile menu when clicking on a link
-    mobileMenu.querySelectorAll("a").forEach((link) => {
-      link.addEventListener("click", () => {
-        mobileMenu.classList.add("hidden");
-        mobileMenuButton.setAttribute("aria-expanded", "false");
-        if (menuIconOpen && menuIconClose) {
-          menuIconOpen.classList.remove("hidden");
-          menuIconClose.classList.add("hidden");
-        }
-      });
+    // Mobile menu links - close menu on navigation
+    if (mobileMenu && e.target.closest("#mobile-menu a")) {
+      closeMobileMenu();
+      return;
+    }
+  });
+
+  // Palette picker change (not delegated - single element with ID)
+  if (palettePicker) {
+    palettePicker.addEventListener("change", (e) => {
+      const palette = e.target.value;
+      if (palette === "default") {
+        delete html.dataset.palette;
+        delete localStorage.palette;
+      } else {
+        html.dataset.palette = palette;
+        localStorage.palette = palette;
+      }
     });
   }
 });

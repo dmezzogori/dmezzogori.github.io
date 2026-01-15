@@ -1,5 +1,5 @@
-/* JetBrains Mono - Primary font for entire site */
-@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&display=swap");
+/* JetBrains Mono - Display/UI font | Source Sans 3 - Body font */
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Source+Sans+3:wght@400;500;600;700&display=swap");
 
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
@@ -95,11 +95,13 @@
   --shadow-neo-lg: 6px 6px 0 0 var(--color-shadow);
   --shadow-neo-hover: 2px 2px 0 0 var(--color-shadow);
 
-  /* Fonts - Single source of truth */
-  --font-primary: "JetBrains Mono", monospace;
-  --font-sans: var(--font-primary);
-  --font-display: var(--font-primary);
-  --font-mono: var(--font-primary);
+  /* Fonts - Display (headings/UI) vs Body (prose) */
+  --font-display: "JetBrains Mono", monospace;
+  --font-body: "Source Sans 3", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+
+  /* Tailwind mappings */
+  --font-sans: var(--font-body);
 }
 
 /* Base styles */
@@ -108,9 +110,11 @@ html {
 }
 
 body {
-  font-family: var(--font-sans);
+  font-family: var(--font-body);
   @apply antialiased;
   background-color: var(--color-bg-light);
+  font-size: 1.0625rem; /* 17px - slightly larger for better readability */
+  line-height: 1.6;
 }
 
 /* Dark mode body */
@@ -270,12 +274,28 @@ pre code {
   @apply bg-stone-900;
 }
 
-/* Headings with display font */
-h1, h2, h3 {
+/* Headings with display font (JetBrains Mono for that engineer feel) */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  letter-spacing: -0.025em;
+}
+
+/* UI elements use display font for consistency */
+nav, button, .neo-btn, .neo-tag, .neo-nav-active, label, th {
   font-family: var(--font-display);
 }
 
-/* Prose adjustments for neobrutalist feel */
+/* Prose adjustments - readable body text with character */
+.prose {
+  font-family: var(--font-body);
+  --tw-prose-body: #292524;
+  --tw-prose-headings: #000;
+  --tw-prose-bold: #000;
+  color: #292524;
+  font-size: 1.0625rem;
+  line-height: 1.7;
+}
+
 .prose a {
   @apply text-primary-600 font-semibold;
   text-decoration-thickness: 2px;
@@ -287,33 +307,28 @@ h1, h2, h3 {
 
 .prose strong {
   @apply font-bold;
-}
-
-/* Override prose colors for better contrast on cream background */
-.prose {
-  --tw-prose-body: #292524;
-  --tw-prose-headings: #000;
-  --tw-prose-bold: #000;
-  color: #292524 !important;
+  color: #000;
 }
 
 .prose p, .prose li, .prose blockquote {
   color: #292524;
 }
 
-.prose strong {
-  color: #000;
+/* Prose headings keep the monospace character */
+.prose h1, .prose h2, .prose h3, .prose h4 {
+  font-family: var(--font-display);
+  letter-spacing: -0.025em;
 }
 
 .dark .prose {
-  --tw-prose-body: #d6d3d1;
+  --tw-prose-body: #e7e5e4;
   --tw-prose-headings: #fff;
   --tw-prose-bold: #fff;
-  color: #d6d3d1 !important;
+  color: #e7e5e4;
 }
 
 .dark .prose p, .dark .prose li, .dark .prose blockquote {
-  color: #d6d3d1;
+  color: #e7e5e4;
 }
 
 .dark .prose strong {
@@ -387,4 +402,52 @@ h1, h2, h3 {
 
 .dark .neo-nav-active {
   background-color: var(--color-primary-800);
+}
+
+/* ==========================================================================
+   SPACING RHYTHM SYSTEM
+   Creates visual hierarchy through varied spacing
+   ========================================================================== */
+
+/* Section spacing - creates breathing room between major content blocks */
+.section-tight {
+  @apply py-8 md:py-12;  /* 32-48px - for dense, related content */
+}
+
+.section-normal {
+  @apply py-12 md:py-16;  /* 48-64px - standard sections */
+}
+
+.section-relaxed {
+  @apply py-16 md:py-24;  /* 64-96px - primary content, hero areas */
+}
+
+.section-generous {
+  @apply py-20 md:py-32;  /* 80-128px - major breaks, featured content */
+}
+
+/* Content spacing within sections */
+.content-tight {
+  @apply space-y-3;  /* 12px - tightly related items */
+}
+
+.content-normal {
+  @apply space-y-6;  /* 24px - standard content flow */
+}
+
+.content-relaxed {
+  @apply space-y-8 md:space-y-12;  /* 32-48px - distinct content blocks */
+}
+
+/* Heading to content spacing */
+.heading-space-tight {
+  @apply mb-4;  /* 16px */
+}
+
+.heading-space-normal {
+  @apply mb-6 md:mb-8;  /* 24-32px */
+}
+
+.heading-space-relaxed {
+  @apply mb-8 md:mb-12;  /* 32-48px */
 }

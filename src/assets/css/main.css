@@ -53,6 +53,7 @@
   --color-primary-600: var(--palette-accent);
   --color-primary-700: var(--palette-dark);
   --color-primary-800: var(--palette-dark);
+  --color-primary-900: var(--palette-dark);
 
   --color-bg-light: var(--palette-light);
   --color-bg-dark: var(--palette-dark);
@@ -309,10 +310,10 @@ nav, button, .neo-btn, .neo-tag, .neo-nav-active, label, th {
 /* Prose adjustments - readable body text with character */
 .prose {
   font-family: var(--font-body);
-  --tw-prose-body: #292524;
-  --tw-prose-headings: #000;
-  --tw-prose-bold: #000;
-  color: #292524;
+  --tw-prose-body: var(--palette-dark);
+  --tw-prose-headings: var(--palette-dark);
+  --tw-prose-bold: var(--palette-dark);
+  color: var(--palette-dark);
   font-size: 1.0625rem;
   line-height: 1.7;
 }
@@ -327,11 +328,11 @@ nav, button, .neo-btn, .neo-tag, .neo-nav-active, label, th {
 
 .prose strong {
   @apply font-bold;
-  color: #000;
+  color: var(--palette-dark);
 }
 
 .prose p, .prose li, .prose blockquote {
-  color: #292524;
+  color: var(--palette-dark);
 }
 
 /* Prose headings keep the monospace character */
@@ -341,18 +342,18 @@ nav, button, .neo-btn, .neo-tag, .neo-nav-active, label, th {
 }
 
 .dark .prose {
-  --tw-prose-body: #e7e5e4;
-  --tw-prose-headings: #fff;
-  --tw-prose-bold: #fff;
-  color: #e7e5e4;
+  --tw-prose-body: var(--palette-light);
+  --tw-prose-headings: var(--palette-light);
+  --tw-prose-bold: var(--palette-light);
+  color: var(--palette-light);
 }
 
 .dark .prose p, .dark .prose li, .dark .prose blockquote {
-  color: #e7e5e4;
+  color: var(--palette-light);
 }
 
 .dark .prose strong {
-  color: #fff;
+  color: var(--palette-light);
 }
 
 /* Avatar with neobrutalist border - AMPLIFIED */
@@ -717,4 +718,27 @@ nav, button, .neo-btn, .neo-tag, .neo-nav-active, label, th {
 
 .dark .neo-social-link {
   @apply bg-stone-900;
+}
+
+/* ==========================================================================
+   THEME TOGGLE
+   ========================================================================== */
+
+.neo-toggle {
+  box-shadow: var(--shadow-neo-hover);
+}
+
+/* ==========================================================================
+   HERO UTILITIES
+   ========================================================================== */
+
+/* Decorative tilted accent square behind avatar */
+.neo-avatar-accent {
+  border-color: var(--palette-accent);
+  transform: rotate(-3deg);
+}
+
+/* Accent text color using design system variable */
+.text-accent {
+  color: var(--palette-accent);
 }

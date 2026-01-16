@@ -24,7 +24,11 @@ document.addEventListener("DOMContentLoaded", () => {
     // Theme toggle - use data attribute for more reliable selection
     if (e.target.closest("#theme-toggle")) {
       const isDark = html.classList.toggle("dark");
-      localStorage.theme = isDark ? "dark" : "light";
+      try {
+        localStorage.theme = isDark ? "dark" : "light";
+      } catch (e) {
+        // Private browsing mode - fail silently
+      }
       return;
     }
 
@@ -44,6 +48,13 @@ document.addEventListener("DOMContentLoaded", () => {
     if (mobileMenu && e.target.closest("#mobile-menu a")) {
       closeMobileMenu();
       return;
+    }
+  });
+
+  // Keyboard accessibility - Escape key closes mobile menu
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && mobileMenu && !mobileMenu.classList.contains("hidden")) {
+      closeMobileMenu();
     }
   });
 

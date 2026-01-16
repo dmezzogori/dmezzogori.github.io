@@ -19,9 +19,9 @@
 
 :root {
   --palette-dark: #262626;
-  --palette-light: #f0f0f0;
-  --palette-accent: #dc2626;
-  --palette-accent-vivid: #ef4444;
+  --palette-light: #f0f2f8;
+  --palette-accent: #4338ca;
+  --palette-accent-vivid: #4f46e5;
 }
 
 /* --- Semantic Tokens (Light Mode) --- */

@@ -66,6 +66,26 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   }
+
+  // Intersection Observer for scroll-triggered reveal animations
+  const revealElements = document.querySelectorAll('.reveal-on-scroll, .reveal-stagger');
+
+  if (revealElements.length > 0) {
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          // Unobserve after revealing (animate once)
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.15,
+      rootMargin: '0px 0px -40px 0px'
+    });
+
+    revealElements.forEach(el => revealObserver.observe(el));
+  }
 });
 
 // Handle system theme changes

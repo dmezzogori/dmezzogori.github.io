@@ -18,46 +18,52 @@
    To add a new palette: copy a [data-palette] block and change the 3 colors
    ========================================================================== */
 
-/* Default: Violet */
+/* Default: Violet - AMPLIFIED */
 :root {
-  --palette-dark: #3b0764;
+  --palette-dark: #2e0659;
   --palette-light: #fffbeb;
-  --palette-accent: #9333ea;
+  --palette-accent: #a855f7;
+  --palette-accent-vivid: #c084fc;
 }
 
-/* Rugged Earthly */
+/* Rugged Earthly - AMPLIFIED */
 [data-palette="earthly"] {
-  --palette-dark: #4E4B3A;
-  --palette-light: #C4C4A1;
-  --palette-accent: #A05000;  /* Rich amber - balanced for light mode */
+  --palette-dark: #3d3a2d;
+  --palette-light: #d4d4a8;
+  --palette-accent: #c45800;
+  --palette-accent-vivid: #ea7317;
 }
 
-/* Futuristic Primitive */
+/* Futuristic Primitive - AMPLIFIED */
 [data-palette="futuristic"] {
-  --palette-dark: #4A4E69;
-  --palette-light: #C9CBAE;
-  --palette-accent: #6B5B7A;  /* Muted purple - works on light backgrounds */
+  --palette-dark: #3d4155;
+  --palette-light: #d5d7ba;
+  --palette-accent: #7c6b8f;
+  --palette-accent-vivid: #9b8ab0;
 }
 
-/* Harmonious Forms in Bold Colors */
+/* Harmonious Forms in Bold Colors - AMPLIFIED */
 [data-palette="harmonious"] {
-  --palette-dark: #4B0082;
-  --palette-light: #F5F5F5;
-  --palette-accent: #D97706;  /* Amber gold - passes AA on white */
+  --palette-dark: #3d0066;
+  --palette-light: #fafafa;
+  --palette-accent: #f59e0b;
+  --palette-accent-vivid: #fbbf24;
 }
 
-/* Concrete Jungle */
+/* Concrete Jungle - AMPLIFIED */
 [data-palette="concrete"] {
-  --palette-dark: #212121;
-  --palette-light: #F5F5F5;
-  --palette-accent: #C62828;  /* Deep red - high contrast on light */
+  --palette-dark: #1a1a1a;
+  --palette-light: #fafafa;
+  --palette-accent: #dc2626;
+  --palette-accent-vivid: #ef4444;
 }
 
-/* Bold and Raw NEOBRUTALISM */
+/* Bold and Raw NEOBRUTALISM - AMPLIFIED */
 [data-palette="boldraw"] {
-  --palette-dark: #333333;
-  --palette-light: #E5E5E5;
-  --palette-accent: #C62828;  /* Deep red - punchy neobrutalist feel */
+  --palette-dark: #262626;
+  --palette-light: #f0f0f0;
+  --palette-accent: #dc2626;
+  --palette-accent-vivid: #ef4444;
 }
 
 /* --- Semantic Tokens (Light Mode) --- */
@@ -155,19 +161,58 @@ header.sticky {
    NEOBRUTALIST UTILITY CLASSES
    ========================================================================== */
 
-/* Hard shadow cards */
+/* Hard shadow cards - AMPLIFIED hover */
 .neo-card {
   @apply border-2 bg-white;
   border-color: var(--color-border);
   box-shadow: var(--shadow-neo);
+  transition: transform 0.25s var(--ease-out-quart),
+              box-shadow 0.25s var(--ease-out-quart),
+              border-color 0.25s var(--ease-out-quart);
 }
 
 .neo-card:hover {
-  transform: translate(-2px, -2px);
-  box-shadow: var(--shadow-neo-lg);
+  transform: translate(-4px, -4px);
+  box-shadow: 8px 8px 0 0 var(--color-shadow);
+  border-color: var(--palette-accent);
 }
 
 .dark .neo-card {
+  @apply bg-stone-900;
+}
+
+/* Card with accent reveal on hover */
+.neo-card-reveal {
+  @apply border-2 bg-white relative overflow-hidden;
+  border-color: var(--color-border);
+  box-shadow: var(--shadow-neo);
+  transition: transform 0.25s var(--ease-out-quart),
+              box-shadow 0.25s var(--ease-out-quart);
+}
+
+.neo-card-reveal::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 5px;
+  height: 100%;
+  background-color: var(--palette-accent);
+  transform: scaleY(0);
+  transform-origin: bottom;
+  transition: transform 0.3s var(--ease-out-quart);
+}
+
+.neo-card-reveal:hover {
+  transform: translate(-4px, -4px);
+  box-shadow: 8px 8px 0 0 var(--color-shadow);
+}
+
+.neo-card-reveal:hover::before {
+  transform: scaleY(1);
+}
+
+.dark .neo-card-reveal {
   @apply bg-stone-900;
 }
 
@@ -183,40 +228,48 @@ header.sticky {
   background-color: var(--color-primary-800);
 }
 
-/* Neobrutalist buttons */
+/* Neobrutalist buttons - AMPLIFIED */
 .neo-btn {
-  @apply px-4 py-2 font-bold border-2 bg-white dark:bg-stone-900;
+  @apply px-5 py-2.5 font-bold border-2 bg-white dark:bg-stone-900;
   border-color: var(--color-border);
   box-shadow: var(--shadow-neo);
-  transition: transform 0.1s ease-out, box-shadow 0.1s ease-out;
+  transition: transform 0.2s var(--ease-out-quart),
+              box-shadow 0.2s var(--ease-out-quart),
+              background-color 0.2s var(--ease-out-quart);
 }
 
 .neo-btn:hover {
-  transform: translate(-2px, -2px);
-  box-shadow: var(--shadow-neo-lg);
+  transform: translate(-3px, -3px);
+  box-shadow: 7px 7px 0 0 var(--color-shadow);
+  background-color: var(--palette-light);
 }
 
 .neo-btn:active {
   transform: translate(2px, 2px);
   box-shadow: none;
+  transition-duration: 0.05s;
 }
 
 .neo-btn-primary {
-  @apply px-4 py-2 font-bold border-2 text-white;
+  @apply px-5 py-2.5 font-bold border-2 text-white;
   border-color: var(--color-border);
-  background-color: var(--color-primary-600);
+  background-color: var(--palette-accent);
   box-shadow: var(--shadow-neo);
-  transition: transform 0.1s ease-out, box-shadow 0.1s ease-out;
+  transition: transform 0.2s var(--ease-out-quart),
+              box-shadow 0.2s var(--ease-out-quart),
+              background-color 0.2s var(--ease-out-quart);
 }
 
 .neo-btn-primary:hover {
-  transform: translate(-2px, -2px);
-  box-shadow: var(--shadow-neo-lg);
+  transform: translate(-3px, -3px);
+  box-shadow: 7px 7px 0 0 var(--color-shadow);
+  background-color: var(--palette-accent-vivid, var(--palette-accent));
 }
 
 .neo-btn-primary:active {
   transform: translate(2px, 2px);
   box-shadow: none;
+  transition-duration: 0.05s;
 }
 
 /* Tags/badges */
@@ -344,11 +397,18 @@ nav, button, .neo-btn, .neo-tag, .neo-nav-active, label, th {
   color: #fff;
 }
 
-/* Avatar with neobrutalist border */
+/* Avatar with neobrutalist border - AMPLIFIED */
 .neo-avatar {
   @apply border-4;
   border-color: var(--color-border);
-  box-shadow: var(--shadow-neo);
+  box-shadow: var(--shadow-neo-lg);
+  transition: transform 0.3s var(--ease-out-quart),
+              box-shadow 0.3s var(--ease-out-quart);
+}
+
+.neo-avatar:hover {
+  transform: translate(-4px, -4px) rotate(2deg);
+  box-shadow: 10px 10px 0 0 var(--color-shadow);
 }
 
 /* Stats/numbers with accent background */
@@ -362,16 +422,35 @@ nav, button, .neo-btn, .neo-tag, .neo-nav-active, label, th {
   color: var(--color-primary-400);
 }
 
-/* Icon boxes */
+/* Icon boxes - AMPLIFIED */
 .neo-icon-box {
-  @apply w-12 h-12 flex items-center justify-center border-2;
+  @apply w-14 h-14 flex items-center justify-center border-2;
   border-color: var(--color-border);
-  background-color: var(--color-primary-200);
+  background-color: var(--palette-light);
   box-shadow: var(--shadow-neo-hover);
+  transition: transform 0.25s var(--ease-out-quart),
+              box-shadow 0.25s var(--ease-out-quart),
+              background-color 0.25s var(--ease-out-quart);
+}
+
+/* Icon box animates on parent hover */
+.group:hover .neo-icon-box {
+  transform: translate(-2px, -2px) rotate(-5deg);
+  box-shadow: 4px 4px 0 0 var(--color-shadow);
+  background-color: var(--palette-accent);
+}
+
+.group:hover .neo-icon-box svg {
+  color: white;
+  transition: color 0.25s var(--ease-out-quart);
 }
 
 .dark .neo-icon-box {
-  background-color: var(--color-primary-800);
+  background-color: var(--palette-dark);
+}
+
+.dark .group:hover .neo-icon-box {
+  background-color: var(--palette-accent);
 }
 
 /* Input fields */
@@ -401,38 +480,60 @@ nav, button, .neo-btn, .neo-tag, .neo-nav-active, label, th {
   background-color: var(--color-primary-900);
 }
 
-/* Navigation - Bold neobrutalist treatment */
+/* Navigation - Bold neobrutalist treatment - AMPLIFIED */
 .neo-nav-item {
   @apply border-2 font-bold uppercase tracking-wide;
   position: relative;
   border-color: transparent;
-  transition: transform 0.15s ease-out, box-shadow 0.15s ease-out, background-color 0.15s ease-out, border-color 0.15s ease-out;
+  transition: transform 0.2s var(--ease-out-quart),
+              box-shadow 0.2s var(--ease-out-quart),
+              background-color 0.2s var(--ease-out-quart),
+              border-color 0.2s var(--ease-out-quart);
+}
+
+.neo-nav-item::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 3px;
+  background-color: var(--palette-accent);
+  transition: width 0.25s var(--ease-out-quart),
+              left 0.25s var(--ease-out-quart);
 }
 
 .neo-nav-item:hover {
   z-index: 10;
   border-color: var(--color-border);
-  background-color: var(--color-primary-100);
+  background-color: var(--palette-light);
   transform: translate(-2px, -2px);
-  box-shadow: 2px 2px 0 0 var(--color-border);
+  box-shadow: 3px 3px 0 0 var(--color-border);
+}
+
+.neo-nav-item:hover::after {
+  width: 100%;
+  left: 0;
 }
 
 .dark .neo-nav-item:hover {
-  background-color: var(--color-primary-900);
+  background-color: var(--palette-dark);
 }
 
-/* Active state - prominent "you are here" signal */
+/* Active state - prominent "you are here" signal - AMPLIFIED */
 .neo-nav-active {
   @apply border-2 font-bold uppercase tracking-wide;
   position: relative;
   z-index: 5;
   border-color: var(--color-border);
-  background-color: var(--color-primary-300);
+  background-color: var(--palette-accent);
+  color: white;
   box-shadow: var(--shadow-neo);
 }
 
 .dark .neo-nav-active {
-  background-color: var(--color-primary-700);
+  background-color: var(--palette-accent);
+  color: white;
 }
 
 /* ==========================================================================
@@ -481,4 +582,181 @@ nav, button, .neo-btn, .neo-tag, .neo-nav-active, label, th {
 
 .heading-space-relaxed {
   @apply mb-8 md:mb-12;  /* 32-48px */
+}
+
+/* ==========================================================================
+   DRAMATIC TYPE SCALE - Confident Academic Energy
+   Base: 17px | Uses fluid sizing for dramatic jumps
+   ========================================================================== */
+
+/* Display headlines - commanding presence */
+.type-display {
+  font-family: var(--font-display);
+  font-size: clamp(2.75rem, 7vw, 5rem);
+  line-height: 0.95;
+  letter-spacing: -0.04em;
+  font-weight: 700;
+}
+
+/* Page titles - strong but subordinate to display */
+.type-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.875rem, 4.5vw, 3rem);
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  font-weight: 700;
+}
+
+/* Section headings - clear hierarchy */
+.type-heading {
+  font-family: var(--font-display);
+  font-size: clamp(1.375rem, 2.5vw, 2rem);
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+  font-weight: 700;
+}
+
+/* Taglines/subtitles - accent emphasis */
+.type-tagline {
+  font-family: var(--font-display);
+  font-size: clamp(1rem, 2vw, 1.375rem);
+  line-height: 1.3;
+  letter-spacing: 0.02em;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+/* ==========================================================================
+   MOTION SYSTEM - Purposeful, Professional Animation
+   Uses exponential easing (ease-out-quart) for confident deceleration
+   ========================================================================== */
+
+/* Custom easing curves */
+:root {
+  --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+  --ease-out-quint: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Respect reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Page entrance animations - staggered reveals */
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.92);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Entrance animation classes */
+.animate-on-load {
+  animation: slideUp 0.5s var(--ease-out-quart) both;
+}
+
+.animate-on-load-delay-1 {
+  animation: slideUp 0.5s var(--ease-out-quart) 0.08s both;
+}
+
+.animate-on-load-delay-2 {
+  animation: slideUp 0.5s var(--ease-out-quart) 0.16s both;
+}
+
+.animate-on-load-delay-3 {
+  animation: slideUp 0.5s var(--ease-out-quart) 0.24s both;
+}
+
+.animate-on-load-delay-4 {
+  animation: slideUp 0.5s var(--ease-out-quart) 0.32s both;
+}
+
+/* Scale entrance for avatar */
+.animate-scale-in {
+  animation: scaleIn 0.45s var(--ease-out-quint) both;
+}
+
+/* Scroll-triggered animations via Intersection Observer */
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.45s var(--ease-out-quart),
+              transform 0.45s var(--ease-out-quart);
+}
+
+.reveal-on-scroll.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger children on scroll reveal */
+.reveal-stagger > * {
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 0.4s var(--ease-out-quart),
+              transform 0.4s var(--ease-out-quart);
+}
+
+.reveal-stagger.is-visible > *:nth-child(1) { transition-delay: 0s; }
+.reveal-stagger.is-visible > *:nth-child(2) { transition-delay: 0.06s; }
+.reveal-stagger.is-visible > *:nth-child(3) { transition-delay: 0.12s; }
+.reveal-stagger.is-visible > *:nth-child(4) { transition-delay: 0.18s; }
+.reveal-stagger.is-visible > *:nth-child(5) { transition-delay: 0.24s; }
+.reveal-stagger.is-visible > *:nth-child(6) { transition-delay: 0.30s; }
+
+.reveal-stagger.is-visible > * {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ==========================================================================
+   SOCIAL LINKS - AMPLIFIED
+   ========================================================================== */
+
+.neo-social-link {
+  @apply w-11 h-11 flex items-center justify-center border-2 bg-white no-underline;
+  border-color: var(--color-border);
+  box-shadow: var(--shadow-neo-hover);
+  transition: transform 0.2s var(--ease-out-quart),
+              box-shadow 0.2s var(--ease-out-quart),
+              background-color 0.2s var(--ease-out-quart),
+              color 0.2s var(--ease-out-quart);
+}
+
+.neo-social-link:hover {
+  transform: translate(-2px, -2px) rotate(-5deg);
+  box-shadow: 4px 4px 0 0 var(--color-shadow);
+  background-color: var(--palette-accent);
+  color: white;
+}
+
+.neo-social-link:active {
+  transform: translate(1px, 1px) rotate(0deg);
+  box-shadow: none;
+}
+
+.dark .neo-social-link {
+  @apply bg-stone-900;
 }

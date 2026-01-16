@@ -7,17 +7,17 @@ description: Courses, PhD supervision, and academic service activities.
 <div class="section-relaxed">
   <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
     {# Header - generous spacing for page intro #}
-    <header class="mb-16 md:mb-20">
-      <h1 class="text-3xl md:text-4xl font-bold text-black dark:text-white mb-6 uppercase tracking-tight border-b-4 border-black dark:border-white pb-2 inline-block" data-i18n="pages.teaching.title">Teaching</h1>
+    <header class="mb-16 md:mb-20 animate-on-load">
+      <h1 class="type-title text-black dark:text-white mb-6 uppercase border-b-4 border-black dark:border-white pb-2 inline-block" data-i18n="pages.teaching.title">Teaching</h1>
       <p class="text-lg text-stone-800 dark:text-stone-300 max-w-3xl mt-6" data-i18n="pages.teaching.description">
         I teach courses on AI/ML applications in operations, project management, and data analytics at UniMORE.
       </p>
     </header>
 
     {# Courses Section #}
-    <section class="mb-20 md:mb-24">
-      <h2 class="text-2xl font-bold text-black dark:text-white heading-space-normal uppercase tracking-tight" data-i18n="sections.courses">Courses</h2>
-      <div class="space-y-6">
+    <section class="mb-20 md:mb-24 reveal-on-scroll">
+      <h2 class="type-heading text-black dark:text-white heading-space-normal uppercase" data-i18n="sections.courses">Courses</h2>
+      <div class="space-y-6 reveal-stagger">
         {% for course in teaching.courses %}
           <div class="neo-card neo-hover p-6">
             <div class="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-4 mb-4">
@@ -51,9 +51,9 @@ description: Courses, PhD supervision, and academic service activities.
     </section>
 
     {# PhD Supervision #}
-    <section class="mb-20 md:mb-24">
-      <h2 class="text-2xl font-bold text-black dark:text-white heading-space-normal uppercase tracking-tight" data-i18n="sections.phdSupervision">PhD Supervision</h2>
-      <div class="grid sm:grid-cols-2 gap-6">
+    <section class="mb-20 md:mb-24 reveal-on-scroll">
+      <h2 class="type-heading text-black dark:text-white heading-space-normal uppercase" data-i18n="sections.phdSupervision">PhD Supervision</h2>
+      <div class="grid sm:grid-cols-2 gap-6 reveal-stagger">
         {% for student in teaching.supervision %}
           <div class="neo-card neo-hover p-6">
             <div class="flex items-start gap-4">
@@ -74,9 +74,9 @@ description: Courses, PhD supervision, and academic service activities.
     </section>
 
     {# Academic Service - final section #}
-    <section>
-      <h2 class="text-2xl font-bold text-black dark:text-white heading-space-normal uppercase tracking-tight" data-i18n="sections.academicService">Academic Service</h2>
-      <div class="space-y-4">
+    <section class="reveal-on-scroll">
+      <h2 class="type-heading text-black dark:text-white heading-space-normal uppercase" data-i18n="sections.academicService">Academic Service</h2>
+      <div class="space-y-4 reveal-stagger">
         {% for service in teaching.service %}
           <div class="neo-card p-5">
             <h3 class="font-bold text-black dark:text-white mb-2 font-display">{{ service.role }}</h3>

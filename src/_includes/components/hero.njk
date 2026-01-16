@@ -1,36 +1,43 @@
-{# Hero section for home page - Neobrutalist style #}
-<section class="pt-12 md:pt-16 pb-8 md:pb-12">
+{# Hero section for home page - Neobrutalist style with AMPLIFIED impact #}
+<section class="pt-16 md:pt-24 pb-12 md:pb-16">
   <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex flex-col md:flex-row items-center gap-8 md:gap-16">
-      <!-- Avatar with neobrutalist shadow -->
-      <div class="flex-shrink-0">
-        <picture>
-          <source type="image/webp"
-                  srcset="/assets/images/avatar-224.webp 224w, /assets/images/avatar-448.webp 448w"
-                  sizes="(min-width: 768px) 224px, 176px">
-          <img src="/assets/images/avatar-448.jpg"
-               srcset="/assets/images/avatar-224.jpg 224w, /assets/images/avatar-448.jpg 448w"
-               sizes="(min-width: 768px) 224px, 176px"
-               alt="Davide Mezzogori"
-               width="224" height="224"
-               class="w-44 h-44 md:w-56 md:h-56 object-cover neo-avatar">
-        </picture>
+    <div class="flex flex-col md:flex-row items-center gap-10 md:gap-20">
+      <!-- Avatar with decorative accent and entrance animation -->
+      <div class="flex-shrink-0 animate-scale-in">
+        <div class="relative">
+          {# Decorative tilted accent square behind avatar #}
+          <div class="absolute -top-3 -left-3 w-44 h-44 md:w-56 md:h-56 border-4 -z-10"
+               style="border-color: var(--palette-accent); transform: rotate(-3deg);"></div>
+          <picture>
+            <source type="image/webp"
+                    srcset="/assets/images/avatar-224.webp 224w, /assets/images/avatar-448.webp 448w"
+                    sizes="(min-width: 768px) 224px, 176px">
+            <img src="/assets/images/avatar-448.jpg"
+                 srcset="/assets/images/avatar-224.jpg 224w, /assets/images/avatar-448.jpg 448w"
+                 sizes="(min-width: 768px) 224px, 176px"
+                 alt="Davide Mezzogori"
+                 width="224" height="224"
+                 class="w-44 h-44 md:w-56 md:h-56 object-cover neo-avatar relative">
+          </picture>
+        </div>
       </div>
 
-      <!-- Content -->
+      <!-- Content with staggered entrance animations -->
       <div class="text-center md:text-left">
-        <h1 class="text-4xl md:text-5xl font-bold text-black dark:text-white mb-4 uppercase tracking-tight">
-          Davide Mezzogori
+        <h1 class="type-display text-black dark:text-white mb-6 uppercase animate-on-load">
+          Davide<br class="hidden md:block"> Mezzogori
         </h1>
-        <p class="text-xl md:text-2xl text-primary-600 dark:text-primary-400 font-bold mb-4 font-display" data-i18n="hero.tagline">
+        <p class="type-tagline mb-4 animate-on-load-delay-1" style="color: var(--palette-accent);" data-i18n="hero.tagline">
           Research Scientist &middot; AI & Operations Expert
         </p>
-        <p class="text-lg text-stone-800 dark:text-stone-300 max-w-2xl mb-6" data-i18n="hero.subtitle">
+        <p class="text-lg md:text-xl text-stone-800 dark:text-stone-300 max-w-2xl mb-8 animate-on-load-delay-2" data-i18n="hero.subtitle">
           Bridging Academia and Industry through AI, Machine Learning, and Operations Research
         </p>
 
-        <!-- Social Links -->
-        {% include "components/social-links.njk" %}
+        <!-- Social Links with staggered entrance -->
+        <div class="animate-on-load-delay-3">
+          {% include "components/social-links.njk" %}
+        </div>
       </div>
     </div>
   </div>

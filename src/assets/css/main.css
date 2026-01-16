@@ -1,6 +1,5 @@
 /* JetBrains Mono - Display/UI font | Source Sans 3 - Body font
-   Weights: 400 (normal), 600 (semibold), 700 (bold) - reduced from 7 to 5 weights for faster loading */
-@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Source+Sans+3:wght@400;600;700&display=swap");
+   Fonts loaded via <link> in head.njk for parallel downloading (not @import which creates waterfall) */
 
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";

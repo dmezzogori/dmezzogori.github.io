@@ -14,52 +14,10 @@
    ========================================================================== */
 
 /* ==========================================================================
-   COLOR PALETTE SYSTEM - Edit palettes here
-   To add a new palette: copy a [data-palette] block and change the 3 colors
+   COLOR PALETTE - Bold and Raw Neobrutalism
    ========================================================================== */
 
-/* Default: Violet - AMPLIFIED */
 :root {
-  --palette-dark: #2e0659;
-  --palette-light: #fffbeb;
-  --palette-accent: #a855f7;
-  --palette-accent-vivid: #c084fc;
-}
-
-/* Rugged Earthly - AMPLIFIED */
-[data-palette="earthly"] {
-  --palette-dark: #3d3a2d;
-  --palette-light: #d4d4a8;
-  --palette-accent: #c45800;
-  --palette-accent-vivid: #ea7317;
-}
-
-/* Futuristic Primitive - AMPLIFIED */
-[data-palette="futuristic"] {
-  --palette-dark: #3d4155;
-  --palette-light: #d5d7ba;
-  --palette-accent: #7c6b8f;
-  --palette-accent-vivid: #9b8ab0;
-}
-
-/* Harmonious Forms in Bold Colors - AMPLIFIED */
-[data-palette="harmonious"] {
-  --palette-dark: #3d0066;
-  --palette-light: #fafafa;
-  --palette-accent: #f59e0b;
-  --palette-accent-vivid: #fbbf24;
-}
-
-/* Concrete Jungle - AMPLIFIED */
-[data-palette="concrete"] {
-  --palette-dark: #1a1a1a;
-  --palette-light: #fafafa;
-  --palette-accent: #dc2626;
-  --palette-accent-vivid: #ef4444;
-}
-
-/* Bold and Raw NEOBRUTALISM - AMPLIFIED */
-[data-palette="boldraw"] {
   --palette-dark: #262626;
   --palette-light: #f0f0f0;
   --palette-accent: #dc2626;

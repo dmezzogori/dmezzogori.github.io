@@ -1,17 +1,11 @@
-// Theme and palette toggle with event delegation for performance
+// Theme toggle with event delegation for performance
 document.addEventListener("DOMContentLoaded", () => {
   // Cache DOM references
   const html = document.documentElement;
-  const palettePicker = document.getElementById("palette-picker");
   const mobileMenuButton = document.getElementById("mobile-menu-button");
   const mobileMenu = document.getElementById("mobile-menu");
   const menuIconOpen = document.getElementById("menu-icon-open");
   const menuIconClose = document.getElementById("menu-icon-close");
-
-  // Set initial palette picker value from localStorage
-  if (palettePicker && localStorage.palette) {
-    palettePicker.value = localStorage.palette;
-  }
 
   // Helper function to close mobile menu
   function closeMobileMenu() {
@@ -52,20 +46,6 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
   });
-
-  // Palette picker change (not delegated - single element with ID)
-  if (palettePicker) {
-    palettePicker.addEventListener("change", (e) => {
-      const palette = e.target.value;
-      if (palette === "default") {
-        delete html.dataset.palette;
-        delete localStorage.palette;
-      } else {
-        html.dataset.palette = palette;
-        localStorage.palette = palette;
-      }
-    });
-  }
 
   // Intersection Observer for scroll-triggered reveal animations
   const revealElements = document.querySelectorAll('.reveal-on-scroll, .reveal-stagger');

@@ -43,15 +43,13 @@
 <!-- Umami Analytics -->
 <script defer src="{{ site.umamiUrl }}/script.js" data-website-id="{{ site.umamiWebsiteId }}"></script>
 
-<!-- Theme, palette, and language initialization (prevent flash) -->
+<!-- Theme and language initialization (prevent flash) -->
 <script>
   if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
     document.documentElement.classList.add('dark');
   } else {
     document.documentElement.classList.remove('dark');
   }
-  // Palette initialization - default to boldraw
-  document.documentElement.dataset.palette = localStorage.palette || 'boldraw';
   // Language initialization - detect browser language or use stored preference
   (function() {
     var lang = localStorage.getItem('lang');
